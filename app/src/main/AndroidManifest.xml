@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.purdue.PavementPatchingTracker"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!--&lt;!&ndash; For getting the device ID. &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".MainLoginActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BasicGpsLoggingActivity"
+            android:label="@string/title_activity_combine"
+            android:parentActivityName=".MainLoginActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.purdue.PavementPatchingTracker.MainLoginActivity" />
+        </activity>
+        <activity
+            android:name=".SimplifiedCombineActivity"
+            android:label="@string/title_activity_simplified_combine"
+            android:parentActivityName=".MainLoginActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.purdue.PavementPatchingTracker.MainLoginActivity" />
+        </activity>
+        <activity
+            android:name=".CombineActivity"
+            android:label="@string/title_activity_combine"
+            android:parentActivityName=".MainLoginActivity"
+            android:screenOrientation="landscape" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.purdue.PavementPatchingTracker.MainLoginActivity" />
+        </activity>
+        <activity
+            android:name=".KartActivity"
+            android:label="@string/title_activity_kart"
+            android:parentActivityName=".MainLoginActivity"
+            android:screenOrientation="landscape" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.purdue.PavementPatchingTracker.MainLoginActivity" />
+        </activity>
+        <activity
+            android:name=".TruckActivity"
+            android:label="@string/title_activity_truck"
+            android:parentActivityName=".MainLoginActivity"
+            android:screenOrientation="landscape" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.purdue.PavementPatchingTracker.MainLoginActivity" />
+        </activity>
+        <activity
+            android:name=".PPTrackerActivity"
+            android:label="@string/title_activity_pptracker"
+            android:parentActivityName=".MainLoginActivity"
+            android:screenOrientation="landscape" >
+            
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.purdue.PavementPatchingTracker.MainLoginActivity" />
+        </activity>
+    </application>
+
+</manifest>
