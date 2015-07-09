@@ -127,7 +127,7 @@ public class TruckActivity extends BasicGpsLoggingActivity {
 				MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
 						getString(R.string.truck_temp_image_create_error));
 				Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-				Log.e("TruckTakePicureCreateTempFile", e.toString());
+				Log.e("TruckPicCreateTempFile", e.toString());
 			}
 
 			// Continue only if the File was successfully created

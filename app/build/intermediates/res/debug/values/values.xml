@@ -208,6 +208,7 @@
     <string name="button_ok">OK</string>
     <string name="button_pick_from_a_list">Registration History</string>
     <string name="button_yes">Yes</string>
+    <string name="cell_log_file_head">"% Time, GPS time, lat, lon, speed, bearing, gsmIds, gsmDbms, gsmTimeStamps, cdmaIds, cdmaDbms, cdmaTimeStamps, lteIds, lteDbms, lteTimeStamps\n"</string>
     <string name="ckt_state">CKT state: </string>
     <string name="ckt_state_initializing">Initializing…</string>
     <string name="ckt_state_loading">Loading…</string>
@@ -259,8 +260,6 @@ available. Please contact the developer for assistance.</string>
     <eat-comment/>
     <string name="filling_space">" "</string>
     <string name="gps_data">GPS data: </string>
-    <string name="gps_log_file_close_error">Could not close log file!\n</string>
-    <string name="gps_log_file_create_error">Could not create log file!\n</string>
     <string name="gps_log_file_dir_create_error">Could not create directories!\n</string>
     <string name="gps_log_file_external_storage_error">Could not find the external storage!\n</string>
     <string name="gps_log_file_head">"% Time, GPS time, lat, lon, altitude, speed, bearing, accuracy\n"</string>
@@ -279,6 +278,9 @@ available. Please contact the developer for assistance.</string>
     <string name="kart_not_unloading">Start to unload</string>
     <string name="kart_unloading">Stop unloading</string>
     <string name="lat_gps_text_view_default">Lat: Loading…</string>
+    <string name="log_file_close_error">Could not close log file!\n</string>
+    <string name="log_file_create_error">Could not create log file!\n</string>
+    <string name="log_file_write_error">Could not log into file!\n</string>
     <string name="login_id_hint">Plate No. preferred</string>
     <string name="login_id_message">ID: </string>
     <string name="login_message">Pavement Patching Tracker</string>
@@ -295,7 +297,6 @@ available. Please contact the developer for assistance.</string>
     <string name="saved_last_id">savedLastId</string>
     <string name="saved_last_type">savedLastType</string>
     <string name="shared_preference_file_key">edu.purdue.pptracker.shared_preference_file</string>
-    <string name="signal_log_file_head">"% Time, GPS time, lat, lon, altitude, speed, bearing, accuracy, gsmIds, gsmDbms, gsmTimeStamps, cdmaIds, cdmaDbms, cdmaTimeStamps, lteIds, lteDbms, lteTimeStamps\n"</string>
     <string name="speed_gps_text_view_default">Speed: Loading…</string>
     <!-- From: file:/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/res/values/admob_strings.xml -->
     <eat-comment/>
@@ -330,7 +331,7 @@ available. Please contact the developer for assistance.</string>
     <!-- From: file:/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="warning_toast_unknown_vehicle">Warning! The vehicle type regestered with this ID is unknown!\nThe preference file may be corrupted!/nYou can try another ID.</string>
-    <string name="wifi_log_file_head">"% Time, GPS time, RSSI, \n"</string>
+    <string name="wifi_disc_log_file_head">"% ------\nTime, GPS time, timeStamp (Time since boot)\nNum, SSID, BSSID, RssiDbm, frequency, timeStamp\n"</string>
     <!-- From: file:/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">

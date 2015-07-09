@@ -7,7 +7,6 @@ package edu.purdue.PavementPatchingTracker;
  * 
  */
 
-import java.io.IOException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -19,138 +18,135 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 public class SimplifiedCombineActivity extends BasicGpsLoggingActivity {
 
-	private boolean combineIsUnloading = false;
+    private boolean combineIsUnloading = false;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		actionBarActivityOnCreate(savedInstanceState);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        actionBarActivityOnCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_combine);
-		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
-	}
+        setContentView(R.layout.activity_combine);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new PlaceholderFragment()).commit();
+        }
+    }
 
-	@Override
-	protected void onStart() {
-		// TODO Auto-generated method stub
-		super.onStart();
+    @Override
+    protected void onStart() {
+        super.onStart();
 
-		try {
-			getMLogState().write("% Combine state: not unloading (default)\n");
-		} catch (IOException e) {
-			MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-					getString(R.string.gps_log_file_create_error));
-			Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-			Log.e("CombineOnStartWrite", e.toString());
-		}
-	}
+        LogFileWrite(isLOG_STATE_FLAG(), getmLogFileState(),
+                "% Combine state: not unloading (default)\n",
+                "CombineOnStartWrite");
 
-	@Override
-	public String getLoginType() {
-		return getString(R.string.vehicle_combine);
-	}
+    }
 
-	@Override
-	public String getPartialLogFilePath() {
-		return getString(R.string.gps_log_file_path_combine);
-	}
+    @Override
+    public String getLoginType() {
+        return getString(R.string.vehicle_combine);
+    }
 
-	@Override
-	public void setBackgroundColor() {
-		findViewById(R.id.textViewVehicleTypeLabel).getRootView()
-				.setBackgroundColor(
-						getResources().getColor(
-								MainLoginActivity.COLOR_ACTIVITY_COMBINE));
-	}
+    @Override
+    public String getPartialLogFilePath() {
+        return getString(R.string.gps_log_file_path_combine);
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+    @Override
+    public void setBackgroundColor() {
+        findViewById(R.id.textViewVehicleTypeLabel).getRootView()
+                .setBackgroundColor(
+                        getResources().getColor(
+                                MainLoginActivity.COLOR_ACTIVITY_COMBINE));
+    }
 
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.combine, menu);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.combine, menu);
+        return true;
+    }
 
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
-		public PlaceholderFragment() {
-		}
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
 
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_combine,
-					container, false);
-			return rootView;
-		}
-	}
+        public PlaceholderFragment() {
+        }
 
-	public void changeCombineUnloadingState(View view) {
-		Button changeStateButton = (Button) view;
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_combine,
+                    container, false);
+            return rootView;
+        }
+    }
 
-		// Change the text and color (which will be effective) of the button and
-		// record the change of
-		// state into log file.
-		if (combineIsUnloading) {
-			// From "unloading" to "not unloading".
-			changeStateButton.setText(getString(R.string.kart_not_unloading));
-			changeStateButton.setBackgroundColor(getResources().getColor(
-					R.color.kart_not_unloading));
+    public void changeCombineUnloadingState(View view) {
+        Button changeStateButton = (Button) view;
 
-			long date = System.currentTimeMillis();
-			try {
-				getMLogState()
-						.write(super.getFormatterClock().format(date) + " ("
-								+ date
-								+ ") Combine state changes to: not unloading\n");
-			} catch (IOException e) {
-				MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-						getString(R.string.gps_log_file_create_error));
-				Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-				Log.e("KartChangeStateWrite", e.toString());
-			}
+        // Change the text and color (which will be effective) of the button and
+        // record the change of
+        // state into log file.
+        if (combineIsUnloading) {
+            // From "unloading" to "not unloading".
+            changeStateButton.setText(getString(R.string.kart_not_unloading));
+            changeStateButton.setBackgroundColor(getResources().getColor(
+                    R.color.kart_not_unloading));
 
-		} else {
-			// From "not unloading" to "unloading".
-			changeStateButton.setText(getString(R.string.kart_unloading));
-			changeStateButton.setBackgroundColor(getResources().getColor(
-					R.color.kart_unloading));
+            long date = System.currentTimeMillis();
+            try {
+                getMLogState()
+                        .write(super.getFormatterClock().format(date) + " ("
+                                + date
+                                + ") Combine state changes to: not unloading\n");
+            } catch (IOException e) {
+                MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
+                        getString(R.string.log_file_write_error));
+                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
+                Log.e("KartChangeStateWrite", e.toString());
+            }
 
-			long date = System.currentTimeMillis();
-			try {
-				getMLogState().write(
-						super.getFormatterClock().format(date) + " (" + date
-								+ ") Combine state changes to: unloading\n");
-			} catch (IOException e) {
-				MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-						getString(R.string.gps_log_file_create_error));
-				Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-				Log.e("KartChangeStateWrite", e.toString());
-			}
-		}
+        } else {
+            // From "not unloading" to "unloading".
+            changeStateButton.setText(getString(R.string.kart_unloading));
+            changeStateButton.setBackgroundColor(getResources().getColor(
+                    R.color.kart_unloading));
 
-		changeStateButton.invalidate();
-		// Change the state flag.
-		combineIsUnloading = !combineIsUnloading;
-	}
+            long date = System.currentTimeMillis();
+            try {
+                getMLogState().write(
+                        super.getFormatterClock().format(date) + " (" + date
+                                + ") Combine state changes to: unloading\n");
+            } catch (IOException e) {
+                MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
+                        getString(R.string.log_file_write_error));
+                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
+                Log.e("KartChangeStateWrite", e.toString());
+            }
+        }
+
+        changeStateButton.invalidate();
+        // Change the state flag.
+        combineIsUnloading = !combineIsUnloading;
+    }
 
 }

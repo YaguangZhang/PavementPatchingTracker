@@ -62,18 +62,12 @@ public class PPTrackerActivity extends BasicGpsLoggingActivity {
     }
 
     @Override
-    protected void onStart() {
-        // TODO Auto-generated method stub
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
 
-        try {
-            getMLogState().write("% PPTracker state: not spreading (default)\n");
-        } catch (IOException e) {
-            MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-                    getString(R.string.gps_log_file_create_error));
-            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-            Log.e("PPTrackerOnStartWrite", e.toString());
-        }
+        LogFileWrite(isLOG_STATE_FLAG(), getmLogFileState(),
+                "% PPTracker state: not spreading (default)",
+                "PPTrackerOnStartWrite");
     }
 
     @Override
@@ -147,30 +141,22 @@ public class PPTrackerActivity extends BasicGpsLoggingActivity {
             buildAlertMessageDoneSpreading(this);
 
             long date = System.currentTimeMillis();
-            try {
-                if (pptrackerDoneSpreading) {
-                    getMLogState()
-                            .write(super.getFormatterClock().format(date)
-                                    + " ("
-                                    + date
-                                    + ") PPTracker state changes to: not spreading");
-                } else {
-                    getMLogState()
-                            .write(super.getFormatterClock().format(date)
-                                    + " ("
-                                    + date
-                                    + ") PPTracker state changes to: not spreading");
-                }
 
-                // Make sure that the data is recorded immediately.
-                getMLogState().flush();
-                getMFileState().setLastModified(date);
-            } catch (IOException e) {
-                MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-                        getString(R.string.gps_log_file_create_error));
-                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-                Log.e("PPTrackerStaWrite", e.toString());
+            String string;
+            if (pptrackerDoneSpreading) {
+                string = super.getFormatterClock().format(date)
+                        + " ("
+                        + date
+                        + ") PPTracker state changes to: not spreading";
+            } else {
+                string = super.getFormatterClock().format(date)
+                        + " ("
+                        + date
+                        + ") PPTracker state changes to: not spreading";
             }
+
+            LogFileWrite(isLOG_STATE_FLAG(), getmLogFileState(),
+                    string, "PPTrackerStaWrite");
 
         } else {
             // From "not unloading" to "unloading".
@@ -179,16 +165,11 @@ public class PPTrackerActivity extends BasicGpsLoggingActivity {
                     R.color.kart_unloading));
 
             long date = System.currentTimeMillis();
-            try {
-                getMLogState().write(
-                        super.getFormatterClock().format(date) + " (" + date
-                                + ") PPTracker state changes to: spreading\n");
-            } catch (IOException e) {
-                MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-                        getString(R.string.gps_log_file_create_error));
-                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-                Log.e("PPTrackerStaWrite", e.toString());
-            }
+
+            LogFileWrite(isLOG_STATE_FLAG(), getmLogFileState(),
+                    super.getFormatterClock().format(date) + " (" + date
+                            + ") PPTracker state changes to: spreading\n",
+                    "PPTrackerStaWrite");
         }
 
         changeStateButton.invalidate();

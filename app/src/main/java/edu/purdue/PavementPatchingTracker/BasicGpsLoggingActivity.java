@@ -1,12 +1,16 @@
 package edu.purdue.PavementPatchingTracker;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.net.wifi.ScanResult;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
@@ -34,6 +38,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /*
  * The activity for GPS data recording only.
@@ -44,288 +49,313 @@ import java.util.Date;
  */
 
 public class BasicGpsLoggingActivity extends ActionBarActivity implements
-		LocationListener {
-	private boolean LOG_SIGNAL_FLAG = true;
-    private TelephonyManager telephonyManager;
-    
-	private boolean LOG_STATE_FLAG = true;
+        LocationListener {
 
-	private String loginId, logFilePath, logFileNameGps, logFileNameState, logFileNameSignal;
+    private final boolean LOG_GPS_FLAG = true;
 
-	private File mFileGps, mFileState, mFileSignal;
-	private FileWriter mLogGps, mLogState, mLogSignal;
+    private boolean LOG_STATE_FLAG = true;
+    private boolean LOG_CELL_FLAG = true;
+    private boolean LOG_WIFI_FLAG = true;
+    private boolean IS_SPEED_TEST_SERVER_FLAG = true;
 
-	private LocationManager mLocationManager;
-	private TextView textViewTime;
-	private SimpleDateFormat formatterUnderline;
-	private SimpleDateFormat formatterClock;
+    private TelephonyManager mTelephonyManager;
+    private WifiManager mWifiManager;
+    private WifiScanReceiver mWifiScanReceiver;
+    private String wifis[];
 
-	// Preference file used to store the info.
-	private SharedPreferences sharedPref;
+    private String loginId, logFilesPath;
+    private LogFile mLogFileGps = new LogFile();
+    private LogFile mLogFileState = new LogFile();
+    private LogFile mLogFileCell = new LogFile();
+    private LogFile mLogFileWifiDisc = new LogFile();
+    private LogFile mLogFileConn = new LogFile();
+    private LocationManager mLocationManager;
 
-	public void setLogStateFlag(boolean flag) {
-		LOG_STATE_FLAG = flag;
-	}
+    private TextView textViewTime;
+    private SimpleDateFormat formatterUnderline = new SimpleDateFormat(
+            "yyyy_MM_dd_HH_mm_ss",
+            java.util.Locale.getDefault());
+    private SimpleDateFormat formatterClock;
 
-	public String getLogFileString() {
-		return logFilePath;
-	}
+    // Preference file used to store the info.
+    private SharedPreferences sharedPref;
 
-    public File getMFileGps() {
-        return mFileGps;
+    public boolean isLOG_STATE_FLAG() {
+        return LOG_STATE_FLAG;
     }
 
-    public File getMFileState() {
-        return mFileState;
+    public String getLoginId() {
+        return loginId;
     }
 
-	public FileWriter getMLogGPS() {
-		return mLogGps;
-	}
+    public void setLoginId(String loginId) {
+        this.loginId = loginId;
+    }
 
-	public FileWriter getMLogState() {
-		return mLogState;
-	}
+    public String getLogFilesPath() {
+        return logFilesPath;
+    }
 
-	public FileWriter getMLogSignal() {
-		return mLogSignal;
-	}
+    public void setLogFilesPath(String logFilesPath) {
+        this.logFilesPath = logFilesPath;
+    }
 
-	public SimpleDateFormat getFormatterClock() {
-		return formatterClock;
-	}
+    public void setLogStateFlag(boolean flag) {
+        LOG_STATE_FLAG = flag;
+    }
 
-	public SharedPreferences getSharedPref() {
-		return sharedPref;
-	}
+    public LogFile getmLogFileState() {
+        return mLogFileState;
+    }
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    public FileWriter getMLogState() {
+        return getmLogFileState().getWriter();
+    }
 
-		actionBarActivityOnCreate(savedInstanceState);
+    public void setmLogFileState(LogFile mLogFileState) {
+        this.mLogFileState = mLogFileState;
+    }
 
-		setContentView(R.layout.activity_basic_gps_logging);
+    public SimpleDateFormat getFormatterClock() {
+        return formatterClock;
+    }
 
-		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
-	}
+    public SharedPreferences getSharedPref() {
+        return sharedPref;
+    }
 
-	public void actionBarActivityOnCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-	@Override
-	protected void onStart() {
-		super.onStart();
+        actionBarActivityOnCreate(savedInstanceState);
 
-		/**
-		 * Initialization.
-		 */
+        setContentView(R.layout.activity_basic_gps_logging);
 
-		// Set the sharedPref if we haven't done so.
-		if (sharedPref == null) {
-			sharedPref = this.getSharedPreferences(
-					getString(R.string.shared_preference_file_key),
-					Context.MODE_PRIVATE);
-		}
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new PlaceholderFragment()).commit();
+        }
+    }
 
-		// Load the history ID record if it's initializing.
-		if (loginId == null) {
-			loginId = sharedPref.getString(getString(R.string.saved_last_id),
-					null);
-		}
+    public void actionBarActivityOnCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-		// Create directories if necessary.
-		if (logFilePath == null) {
-			logFilePath = Environment.getExternalStorageDirectory()
-					+ getPartialLogFilePath() + loginId;
+    @Override
+    protected void onStart() {
+        super.onStart();
 
-			if (Environment.MEDIA_MOUNTED.equals(Environment
-					.getExternalStorageState())) {
-				File logFileDirFile = new File(logFilePath);
+        /**
+         * Initialization.
+         */
 
-				logFileDirFile.mkdirs();
-
-				if (!logFileDirFile.isDirectory()) {
-					MainLoginActivity.toastStringTextAtCenterWithLargerSize(
-							this,
-							getString(R.string.gps_log_file_dir_create_error));
-				}
-			} else {
-				MainLoginActivity
-						.toastStringTextAtCenterWithLargerSize(
-								this,
-								getString(R.string.gps_log_file_external_storage_error));
-			}
-		}
-
-		createLogFiles();
-
-		mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		mLocationManager.requestLocationUpdates(
-				LocationManager.NETWORK_PROVIDER, 0, 0, this);
-		mLocationManager.requestLocationUpdates(
-				LocationManager.GPS_PROVIDER, 0, 0, this);
-	}
-
-	public String getLoginType() {
-		return getString(R.string.vehicle_kart);
-	}
-
-	public String getPartialLogFilePath() {
-		return getString(R.string.gps_log_file_path_kart);
-	}
-
-	public String getLogFilePath() {
-		return logFilePath;
-	}
-
-	public SimpleDateFormat getFormatterUnderline() {
-		return formatterUnderline;
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-        
-        if(LOG_SIGNAL_FLAG) {
-            telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+        // Set the sharedPref if we haven't done so.
+        if (sharedPref == null) {
+            sharedPref = this.getSharedPreferences(
+                    getString(R.string.shared_preference_file_key),
+                    Context.MODE_PRIVATE);
         }
 
-		// Start the timer textView.
-		textViewTime = ((TextView) findViewById(R.id.textViewTime));
-		formatterClock = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss",
-				java.util.Locale.getDefault());
-
-		Thread threadTimer = new Thread() {
-			@Override
-			public void run() {
-				try {
-					while (!isInterrupted()) {
-						Thread.sleep(100);
-						runOnUiThread(new Runnable() {
-							@Override
-							public void run() {
-								Date date = new Date();
-								textViewTime.setText("Time: "
-										+ formatterClock.format(date));
-							}
-						});
-					}
-				} catch (Exception e) {
-					Log.e("BasicGpsLogTimer", e.toString());
-				}
-			}
-		};
-		threadTimer.start();
-
-		setBackgroundColor();
-
-	}
-
-	public void setBackgroundColor() {
-		findViewById(R.id.textViewVehicleTypeLabel).getRootView()
-				.setBackgroundColor(
-						getResources().getColor(
-								MainLoginActivity.COLOR_BASIC_GPS_LOGGING));
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main_activity_login, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
-
-		public PlaceholderFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(
-					R.layout.fragment_basic_gps_logging, container, false);
-			return rootView;
-		}
-	}
-
-	@Override
-	public void onStop() {
-		super.onStop();
-
-		TextView ckt = ((TextView) findViewById(R.id.textViewCktState));
-		ckt.setText(getString(R.string.ckt_state_loading));
-
-		mLocationManager.removeUpdates(this);
-
-		closeLogFiles();
-	}
-
-	@Override
-	public void onLocationChanged(Location location) {
-		TextView ckt = ((TextView) findViewById(R.id.textViewCktState));
-
-		TextView latGps = ((TextView) findViewById(R.id.textViewLatGps));
-		TextView lonGps = ((TextView) findViewById(R.id.textViewLonGps));
-		TextView altitudeGps = ((TextView) findViewById(R.id.textViewAltitudeGps));
-		TextView speedGps = ((TextView) findViewById(R.id.textViewSpeedGps));
-		TextView bearingGps = ((TextView) findViewById(R.id.textViewBearingGps));
-		TextView accuracyGps = ((TextView) findViewById(R.id.textViewAccuracyGps));
-
-		ckt.setText(getString(R.string.ckt_state_recording));
-
-		latGps.setText("Lat: " + location.getLatitude());
-		lonGps.setText("Lon: " + location.getLongitude());
-		altitudeGps.setText("Altitude: " + location.getAltitude());
-		speedGps.setText("Speed: " + location.getSpeed());
-		bearingGps.setText("Bearing: " + location.getBearing());
-		accuracyGps.setText("Accuracy: " + location.getAccuracy());
-
-		long cur_time = System.currentTimeMillis();
-
-        try {
-            mLogGps.write(formatterClock.format(cur_time) + ", " + cur_time
-                    + ", " + location.getLatitude() + ", "
-                    + location.getLongitude() + ", " + location.getAltitude()
-                    + ", " + location.getSpeed() + ", " + location.getBearing()
-                    + ", " + location.getAccuracy() + "\n");
-
-            // Make sure that the data is recorded immediately so that the auto sync (e.g. for Goolge
-            // Drive) works.
-            mLogGps.flush();
-            mFileGps.setLastModified(cur_time);
-        } catch (IOException e) {
-            MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-                    "Error writing into the GPS log file!");
-            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-            Log.e("BasicGpsLogLocChanged", e.toString());
+        // Load the history ID record if it's initializing.
+        if (loginId == null) {
+            loginId = sharedPref.getString(getString(R.string.saved_last_id),
+                    null);
         }
 
-		if(LOG_SIGNAL_FLAG) {
-			ArrayList<Integer> gsmDbms = new ArrayList<>();
-			ArrayList<Integer> cdmaDbms = new ArrayList<>();
-			ArrayList<Integer> lteDbms = new ArrayList<>();
+        // Create directories if necessary.
+        if (logFilesPath == null) {
+            logFilesPath = Environment.getExternalStorageDirectory()
+                    + getPartialLogFilePath() + loginId;
+
+            if (Environment.MEDIA_MOUNTED.equals(Environment
+                    .getExternalStorageState())) {
+                File logFileDirFile = new File(logFilesPath);
+
+                logFileDirFile.mkdirs();
+
+                if (!logFileDirFile.isDirectory()) {
+                    MainLoginActivity.toastStringTextAtCenterWithLargerSize(
+                            this,
+                            getString(R.string.gps_log_file_dir_create_error));
+                }
+            } else {
+                MainLoginActivity
+                        .toastStringTextAtCenterWithLargerSize(
+                                this,
+                                getString(R.string.gps_log_file_external_storage_error));
+            }
+        }
+
+        mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        /** Todo: May want to improve the GPS performance using fused location provider.
+         * https://developer.android.com/training/location/receive-location-updates.html
+         */
+        mLocationManager.requestLocationUpdates(
+                LocationManager.NETWORK_PROVIDER, 0, 0, this);
+
+        mLocationManager.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER, 0, 0, this);
+    }
+
+    public String getLoginType() {
+        return getString(R.string.vehicle_kart);
+    }
+
+    public String getPartialLogFilePath() {
+        return getString(R.string.gps_log_file_path_kart);
+    }
+
+    public String getLogFilePath() {
+        return logFilesPath;
+    }
+
+    public SimpleDateFormat getFormatterUnderline() {
+        return formatterUnderline;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (LOG_CELL_FLAG) {
+            mTelephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+        }
+
+        if (LOG_WIFI_FLAG) {
+            mWifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
+            mWifiScanReceiver = new WifiScanReceiver();
+            registerReceiver(mWifiScanReceiver,
+                    new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+            super.onResume();
+        }
+
+        createLogFiles();
+
+        // Start the timer textView.
+        textViewTime = ((TextView) findViewById(R.id.textViewTime));
+        formatterClock = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss",
+                java.util.Locale.getDefault());
+
+        Thread threadTimer = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(100);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Date date = new Date();
+                                textViewTime.setText("Time: "
+                                        + formatterClock.format(date));
+                            }
+                        });
+                    }
+                } catch (Exception e) {
+                    Log.e("BasicGpsLogTimer", e.toString());
+                }
+            }
+        };
+        threadTimer.start();
+
+        setBackgroundColor();
+
+    }
+
+    public void setBackgroundColor() {
+        findViewById(R.id.textViewVehicleTypeLabel).getRootView()
+                .setBackgroundColor(
+                        getResources().getColor(
+                                MainLoginActivity.COLOR_BASIC_GPS_LOGGING));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main_activity_login, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+
+        public PlaceholderFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(
+                    R.layout.fragment_basic_gps_logging, container, false);
+            return rootView;
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        if (LOG_WIFI_FLAG) {
+            unregisterReceiver(mWifiScanReceiver);
+        }
+
+        closeLogFiles();
+
+        TextView ckt = ((TextView) findViewById(R.id.textViewCktState));
+        ckt.setText(getString(R.string.ckt_state_loading));
+
+        mLocationManager.removeUpdates(this);
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        TextView ckt = ((TextView) findViewById(R.id.textViewCktState));
+
+        TextView latGps = ((TextView) findViewById(R.id.textViewLatGps));
+        TextView lonGps = ((TextView) findViewById(R.id.textViewLonGps));
+        TextView altitudeGps = ((TextView) findViewById(R.id.textViewAltitudeGps));
+        TextView speedGps = ((TextView) findViewById(R.id.textViewSpeedGps));
+        TextView bearingGps = ((TextView) findViewById(R.id.textViewBearingGps));
+        TextView accuracyGps = ((TextView) findViewById(R.id.textViewAccuracyGps));
+
+        ckt.setText(getString(R.string.ckt_state_recording));
+
+        latGps.setText("Lat: " + location.getLatitude());
+        lonGps.setText("Lon: " + location.getLongitude());
+        altitudeGps.setText("Altitude: " + location.getAltitude());
+        speedGps.setText("Speed: " + location.getSpeed());
+        bearingGps.setText("Bearing: " + location.getBearing());
+        accuracyGps.setText("Accuracy: " + location.getAccuracy());
+
+        long cur_time = System.currentTimeMillis();
+
+        LogFileWrite(LOG_GPS_FLAG, mLogFileGps, formatterClock.format(cur_time) + ", " + cur_time
+                        + ", " + location.getLatitude() + ", "
+                        + location.getLongitude() + ", " + location.getAltitude()
+                        + ", " + location.getSpeed() + ", " + location.getBearing()
+                        + ", " + location.getAccuracy() + "\n",
+                "BasicActGpsWrite");
+
+        if (LOG_CELL_FLAG) {
+            ArrayList<Integer> gsmDbms = new ArrayList<>();
+            ArrayList<Integer> cdmaDbms = new ArrayList<>();
+            ArrayList<Integer> lteDbms = new ArrayList<>();
 
             ArrayList<String> gsmIds = new ArrayList<>();
             ArrayList<String> cdmaIds = new ArrayList<>();
@@ -334,219 +364,211 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
             ArrayList<Long> gsmTimeStamps = new ArrayList<>();
             ArrayList<Long> cdmaTimeStamps = new ArrayList<>();
             ArrayList<Long> lteTimeStamps = new ArrayList<>();
-            
-			// Also log the signal strength.
-			try {
 
-				for (final CellInfo info : telephonyManager.getAllCellInfo()) {
-					if (info instanceof CellInfoGsm) {
-						final CellSignalStrengthGsm gsm = ((CellInfoGsm) info).getCellSignalStrength();
-						// do what you need
-						gsmDbms.add(gsm.getDbm());
+            // Also log the cell signal strength.
+            try {
+
+                for (final CellInfo info : mTelephonyManager.getAllCellInfo()) {
+                    if (info instanceof CellInfoGsm) {
+                        final CellSignalStrengthGsm gsm = ((CellInfoGsm) info).getCellSignalStrength();
+                        // do what you need
+                        gsmDbms.add(gsm.getDbm());
                         gsmIds.add(((CellInfoGsm) info).getCellIdentity().toString());
                         gsmTimeStamps.add(info.getTimeStamp());
 
-					} else if (info instanceof CellInfoCdma) {
-						final CellSignalStrengthCdma cdma = ((CellInfoCdma) info).getCellSignalStrength();
-						// do what you need
-						cdmaDbms.add(cdma.getDbm());
+                    } else if (info instanceof CellInfoCdma) {
+                        final CellSignalStrengthCdma cdma = ((CellInfoCdma) info).getCellSignalStrength();
+                        // do what you need
+                        cdmaDbms.add(cdma.getDbm());
                         cdmaIds.add(((CellInfoCdma) info).getCellIdentity().toString());
                         cdmaTimeStamps.add(info.getTimeStamp());
-					} else if (info instanceof CellInfoLte) {
-						final CellSignalStrengthLte lte = ((CellInfoLte) info).getCellSignalStrength();
-						// do what you need
-						lteDbms.add(lte.getDbm());
+                    } else if (info instanceof CellInfoLte) {
+                        final CellSignalStrengthLte lte = ((CellInfoLte) info).getCellSignalStrength();
+                        // do what you need
+                        lteDbms.add(lte.getDbm());
                         lteIds.add(((CellInfoLte) info).getCellIdentity().toString());
                         lteTimeStamps.add(info.getTimeStamp());
-					} else {
-						throw new Exception("Unknown type of cell signal!");
-					}
-				}
-			} catch (Exception e) {
-				Log.e("SignalStrengthLogger", "Unable to obtain cell signal information", e);
-			}
+                    } else {
+                        throw new Exception("Unknown type of cell signal!");
+                    }
+                }
+            } catch (Exception e) {
+                Log.e("CellStrengthLogger", "Unable to obtain cell signal information", e);
+            }
 
-			try {
-				mLogSignal.write(formatterClock.format(cur_time) + ", " + cur_time
-						+ ", " + location.getLatitude() + ", "
-						+ location.getLongitude() + ", " + location.getAltitude()
-						+ ", " + location.getSpeed() + ", " + location.getBearing()
-						+ ", " + location.getAccuracy() + ", "
-                        + gsmIds + ", " + gsmDbms + ", " + gsmTimeStamps + ", "
-                        + cdmaIds + ", " + cdmaDbms + ", " + cdmaTimeStamps + ", "
-                        + lteIds + ", " + lteDbms + ", " + lteTimeStamps + "\n");
+            LogFileWrite(LOG_CELL_FLAG, mLogFileCell,
+                    formatterClock.format(cur_time) + ", " + cur_time
+                            + ", " + location.getLatitude() + ", "
+                            + location.getLongitude() + ", " + location.getSpeed() + ", "
+                            + location.getBearing() + ", "
+                            + gsmIds + ", " + gsmDbms + ", " + gsmTimeStamps + ", "
+                            + cdmaIds + ", " + cdmaDbms + ", " + cdmaTimeStamps + ", "
+                            + lteIds + ", " + lteDbms + ", " + lteTimeStamps + "\n",
+                    "BasicActCellWrite");
 
-				// Make sure that the data is recorded immediately so that the auto sync (e.g. for Goolge
-				// Drive) works.
-				mLogSignal.flush();
-				mFileSignal.setLastModified(cur_time);
-			} catch (IOException e) {
-				MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-						"Error writing into the signal strength file!");
-				Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-				Log.e("BasicSignalChanged", e.toString());
-			}
-		}
-		
-	}
+        }
+    }
 
-	@Override
-	public void onProviderDisabled(String provider) {
-		// TODO Auto-generated method stub
+    @Override
+    public void onProviderDisabled(String provider) {
+        // TODO Auto-generated method stub
 
-	}
+    }
 
-	@Override
-	public void onProviderEnabled(String provider) {
-		// TODO Auto-generated method stub
+    @Override
+    public void onProviderEnabled(String provider) {
+        // TODO Auto-generated method stub
 
-	}
+    }
 
-	@Override
-	public void onStatusChanged(String provider, int status, Bundle extras) {
-		// TODO Auto-generated method stub
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+        // TODO Auto-generated method stub
 
-	}
+    }
 
-	public void createLogFiles() {
-		if (logFileNameGps == null) {
-			formatterUnderline = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss",
-					java.util.Locale.getDefault());
-			Date date = new Date();
-			logFileNameGps = "gps_" + formatterUnderline.format(date) + ".txt";
-		}
+    public void createLogFiles() {
 
-		try {
-			mFileGps = new File(logFilePath, logFileNameGps);
+        mLogFileGps = createLogFile(LOG_GPS_FLAG, mLogFileGps,
+                "gps", getString(R.string.gps_log_file_head), "BasicGpsLogCreate");
 
-			mLogGps = new FileWriter(mFileGps);
-			mLogGps.write("% " + getLoginType() + " " + loginId + ": "
-					+ logFileNameGps + "\n"
-					+ getString(R.string.gps_log_file_head));
+        mLogFileState = createLogFile(LOG_STATE_FLAG, mLogFileState,
+                "state", getString(R.string.gps_log_file_head), "BasicStateLogCreate");
 
-		} catch (IOException e) {
-			MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-					getString(R.string.gps_log_file_create_error));
-			Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-			Log.e("BasicGpsLogCreateLog", e.toString());
-		}
+        mLogFileCell = createLogFile(LOG_CELL_FLAG, mLogFileCell,
+                "cell", getString(R.string.cell_log_file_head), "BasicCellLogCreate");
 
-		if (LOG_STATE_FLAG) {
-			if (logFileNameState == null) {
-				formatterUnderline = new SimpleDateFormat(
-						"yyyy_MM_dd_HH_mm_ss", java.util.Locale.getDefault());
-				Date date = new Date();
-				logFileNameState = "state_" + formatterUnderline.format(date)
-						+ ".txt";
-			}
+        mLogFileWifiDisc = createLogFile(LOG_WIFI_FLAG, mLogFileWifiDisc,
+                "wifi_disc", getString(R.string.wifi_disc_log_file_head), "BasicWifiDiscLogCreate");
 
-			try {
-				mFileState = new File(logFilePath, logFileNameState);
+    }
 
-				mLogState = new FileWriter(mFileState);
-				mLogState.write("% " + getLoginType() + " " + loginId + ": "
-						+ logFileNameState + "\n");
-
-			} catch (IOException e) {
-				MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-                        "Error: Couldn't create the state log file!");
-				Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-				Log.e("BasicStateLogCreate", e.toString());
-			}
-		}
-
-        if (LOG_SIGNAL_FLAG) {
-            if (logFileNameSignal == null) {
-                formatterUnderline = new SimpleDateFormat(
-                        "yyyy_MM_dd_HH_mm_ss", java.util.Locale.getDefault());
+    public LogFile createLogFile(boolean logFlag, LogFile logFile,
+                                 String fileType, String fileTitle, String errorTag) {
+        if (logFlag) {
+            if (logFile.getName() == null) {
                 Date date = new Date();
-                logFileNameSignal = "signal_" + formatterUnderline.format(date)
-                        + ".txt";
+                logFile.setName(fileType + "_" + formatterUnderline.format(date) + ".txt");
             }
 
             try {
-                mFileSignal = new File(logFilePath, logFileNameSignal);
+                logFile.setFile(new File(getLogFilesPath(), logFile.getName()));
 
-                mLogSignal = new FileWriter(mFileSignal);
-                mLogSignal.write("% " + getLoginType() + " " + loginId + ": "
-                        + logFileNameSignal + "\n");
-                mLogSignal.write("% " + getLoginType() + " " + loginId + ": "
-                        + logFileNameGps + "\n"
-                        + getString(R.string.signal_log_file_head));
+                logFile.setWriter(new FileWriter(logFile.getFile()));
+                logFile.getWriter().write("% " + getLoginType() + " " + getLoginId() + ": "
+                        + logFile.getName() + "\n"
+                        + fileTitle);
 
             } catch (IOException e) {
                 MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-                        "Error: Couldn't create the signal log file!");
+                        logFile.getName() + "\n" +
+                                getString(R.string.log_file_create_error)
+                );
                 Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-                Log.e("BasicSignalLogCreate", e.toString());
+                Log.e(errorTag, e.toString());
+            }
+
+            return logFile;
+        } else {
+            return new LogFile();
+        }
+    }
+
+    public void closeLogFiles() {
+
+        // Will test corresponding flags when close the file writers.
+        mLogFileGps = closeLogFile(LOG_GPS_FLAG, mLogFileGps, "closeGpsLog");
+        mLogFileState = closeLogFile(LOG_STATE_FLAG, mLogFileState, "closeStateLog");
+        mLogFileCell = closeLogFile(LOG_CELL_FLAG, mLogFileCell, "closeCellLog");
+        mLogFileWifiDisc = closeLogFile(LOG_WIFI_FLAG, mLogFileWifiDisc, "closeWifiDiscLog");
+    }
+
+    public void LogFileWrite(boolean logFlag, LogFile logFile, String string, String errorTag) {
+        if (logFlag) {
+            try {
+                logFile.getWriter().write(string);
+
+                // Make sure that the data is recorded immediately so that the auto sync (e.g. for Goolge
+                // Drive) works.
+                logFile.getWriter().flush();
+                logFile.getFile().setLastModified(System.currentTimeMillis());
+            } catch (IOException e) {
+                MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
+                        logFile.getName() + "\n" +
+                                getString(R.string.log_file_write_error));
+                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
+                Log.e(errorTag, e.toString());
             }
         }
-	}
+    }
 
-	public void closeLogFiles() {
-		try {
-			Date date = new Date();
-			mLogGps.write("% Stopped at " + formatterClock.format(date) + "\n");
-
-			if (LOG_STATE_FLAG) {
-				mLogState.write("% Stopped at " + formatterClock.format(date)
-						+ "\n");
-			}
-		} catch (IOException e) {
-			MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-					getString(R.string.gps_log_file_write_error));
-			Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-			Log.e("BasicGpsLogOnStopWrite", e.toString());
-		}
-
-		logFileNameGps = null;
-
-		try {
-
-			mLogGps.close();
-
-			// Make the new file available for other apps.
-			Intent mediaScanIntent = new Intent(
-					Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-			Uri contentUri = Uri.fromFile(mFileGps);
-			mediaScanIntent.setData(contentUri);
-			this.sendBroadcast(mediaScanIntent);
-
-		} catch (IOException e) {
-			MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-					getString(R.string.gps_log_file_close_error));
-			Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-			Log.e("BasicGpsLogOnStopClose", e.toString());
-		}
-
-        logFileNameState = closeExtraLogFile(LOG_STATE_FLAG, logFileNameState, mFileState, mLogState);
-        logFileNameSignal = closeExtraLogFile(LOG_SIGNAL_FLAG, logFileNameState, mFileSignal, mLogSignal);
-	}
-
-    private String closeExtraLogFile(boolean logFlag, String logFileNameState, File mFile, FileWriter mLog) {
+    public LogFile closeLogFile(boolean logFlag, LogFile logFile, String errorTag) {
         if (logFlag) {
+
+            Date date = new Date();
+
+            LogFileWrite(true, logFile,
+                    "% Stopped at " + formatterClock.format(date) + "\n",
+                    errorTag);
 
             try {
 
-                mLog.close();
+                logFile.getWriter().close();
 
                 // Make the new file available for other apps.
                 Intent mediaScanIntent = new Intent(
                         Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-                Uri contentUri = Uri.fromFile(mFile);
+                Uri contentUri = Uri.fromFile(logFile.getFile());
                 mediaScanIntent.setData(contentUri);
                 this.sendBroadcast(mediaScanIntent);
 
             } catch (IOException e) {
                 MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-                        getString(R.string.gps_log_file_close_error));
+                        logFile.getName() + "\n" +
+                                getString(R.string.log_file_close_error)
+                );
                 Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-                Log.e("BasicLogOnStopClose", e.toString());
+                Log.e(errorTag, e.toString());
             }
 
-            return null;
+            return new LogFile();
         } else {
-            return logFileNameState;
+            return logFile;
         }
     }
+
+    private class WifiScanReceiver extends BroadcastReceiver {
+        public void onReceive(Context c, Intent intent) {
+
+            long cur_time = System.currentTimeMillis();
+            long elapsed_time = android.os.SystemClock.elapsedRealtime();
+
+            List<ScanResult> wifiScanList = mWifiManager.getScanResults();
+            wifis = new String[wifiScanList.size()];
+
+            for (int i = 0; i < wifiScanList.size(); i++) {
+                wifis[i] = i + ", " + (wifiScanList.get(i)).SSID + ", "
+                        + (wifiScanList.get(i)).BSSID + ", "
+                        + (wifiScanList.get(i)).level + ", "
+                        + (wifiScanList.get(i)).frequency + ", "
+                        + (wifiScanList.get(i)).timestamp;
+
+//                Log.i("ZygLabs", wifis[i]);
+            }
+
+
+            String string = "------\n"
+                    + formatterClock.format(cur_time) + ", " + cur_time + ", " + elapsed_time
+                    + "\n------\n";
+            for (int i = 0; i < wifis.length; i++) {
+                string = string + wifis[i] + "\n";
+            }
+
+            LogFileWrite(LOG_WIFI_FLAG, mLogFileWifiDisc,
+                    string, "BasicActWifiDiscWrite");
+
+            mWifiManager.startScan();
+        }
+    }
+
 }
