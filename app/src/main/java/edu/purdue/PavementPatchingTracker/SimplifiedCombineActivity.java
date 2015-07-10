@@ -9,16 +9,12 @@ package edu.purdue.PavementPatchingTracker;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
-
-import java.io.IOException;
 
 public class SimplifiedCombineActivity extends BasicGpsLoggingActivity {
 
@@ -26,6 +22,8 @@ public class SimplifiedCombineActivity extends BasicGpsLoggingActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
         actionBarActivityOnCreate(savedInstanceState);
 
         setContentView(R.layout.activity_combine);
@@ -113,17 +111,11 @@ public class SimplifiedCombineActivity extends BasicGpsLoggingActivity {
                     R.color.kart_not_unloading));
 
             long date = System.currentTimeMillis();
-            try {
-                getMLogState()
-                        .write(super.getFormatterClock().format(date) + " ("
-                                + date
-                                + ") Combine state changes to: not unloading\n");
-            } catch (IOException e) {
-                MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-                        getString(R.string.log_file_write_error));
-                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-                Log.e("KartChangeStateWrite", e.toString());
-            }
+            LogFileWrite(isLOG_STATE_FLAG(), getmLogFileState(),
+                    super.getFormatterClock().format(date)
+                            + " (" + date
+                            + ") Combine state changes to: not unloading\n",
+                    "KartChangeStateWrite");
 
         } else {
             // From "not unloading" to "unloading".
@@ -132,16 +124,12 @@ public class SimplifiedCombineActivity extends BasicGpsLoggingActivity {
                     R.color.kart_unloading));
 
             long date = System.currentTimeMillis();
-            try {
-                getMLogState().write(
-                        super.getFormatterClock().format(date) + " (" + date
-                                + ") Combine state changes to: unloading\n");
-            } catch (IOException e) {
-                MainLoginActivity.toastStringTextAtCenterWithLargerSize(this,
-                        getString(R.string.log_file_write_error));
-                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-                Log.e("KartChangeStateWrite", e.toString());
-            }
+
+            LogFileWrite(isLOG_STATE_FLAG(), getmLogFileState(),
+                    super.getFormatterClock().format(date)
+                            + " (" + date
+                            + ") Combine state changes to: unloading\n",
+                    "KartChangeStateWrite");
         }
 
         changeStateButton.invalidate();

@@ -37,7 +37,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 
-public class PPTrackerActivity extends BasicGpsLoggingActivity {
+import edu.purdue.PavementPatchingTracker.utils.Utils;
+
+public class PPTrackerActivity extends WifiSpeedTestServerActivity {
     // For the taking a picture function.
     static final int REQUEST_TAKE_PHOTO = 1;
     private File tempImageFile;
@@ -66,7 +68,7 @@ public class PPTrackerActivity extends BasicGpsLoggingActivity {
         super.onResume();
 
         LogFileWrite(isLOG_STATE_FLAG(), getmLogFileState(),
-                "% PPTracker state: not spreading (default)",
+                "% PPTracker state: not spreading (default)\n",
                 "PPTrackerOnStartWrite");
     }
 
@@ -141,8 +143,8 @@ public class PPTrackerActivity extends BasicGpsLoggingActivity {
             buildAlertMessageDoneSpreading(this);
 
             long date = System.currentTimeMillis();
-
             String string;
+
             if (pptrackerDoneSpreading) {
                 string = super.getFormatterClock().format(date)
                         + " ("
@@ -189,12 +191,9 @@ public class PPTrackerActivity extends BasicGpsLoggingActivity {
                                                 final int id) {
                                 dialog.cancel();
 
-                                try {
-                                    getMLogState().write(" (all spreaded)\n");
-                                } catch (IOException e) {
-                                    Log.e("PPTrackerStaWrite",
-                                            e.toString());
-                                }
+                                LogFileWrite(isLOG_STATE_FLAG(), getmLogFileState(),
+                                        " (all spreaded)\n",
+                                        "PPTrackerStaWrite");
                             }
                         })
                 .setNegativeButton(getString(R.string.button_no),
@@ -203,13 +202,9 @@ public class PPTrackerActivity extends BasicGpsLoggingActivity {
                                                 final int id) {
                                 dialog.cancel();
 
-                                try {
-                                    getMLogState().write(
-                                            " (not all spreaded)\n");
-                                } catch (IOException e) {
-                                    Log.e("PPTrackerStaWrite",
-                                            e.toString());
-                                }
+                                LogFileWrite(isLOG_STATE_FLAG(), getmLogFileState(),
+                                        " (not all spreaded)\n",
+                                        "PPTrackerStaWrite");
                             }
                         });
         final AlertDialog alert = builder.create();

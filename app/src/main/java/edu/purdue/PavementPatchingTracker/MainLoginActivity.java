@@ -32,6 +32,8 @@ import android.widget.Toast;
 import java.util.Arrays;
 import java.util.Locale;
 
+import edu.purdue.PavementPatchingTracker.utils.Utils;
+
 public class MainLoginActivity extends ActionBarActivity {
 	// Collected vehicle info.
 	private String loginType, loginId;

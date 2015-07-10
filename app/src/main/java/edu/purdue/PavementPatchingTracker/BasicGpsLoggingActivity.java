@@ -40,6 +40,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import edu.purdue.PavementPatchingTracker.utils.LogFile;
+
 /*
  * The activity for GPS data recording only.
  * 
@@ -53,10 +55,9 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
 
     private final boolean LOG_GPS_FLAG = true;
 
-    private boolean LOG_STATE_FLAG = true;
-    private boolean LOG_CELL_FLAG = true;
-    private boolean LOG_WIFI_FLAG = true;
-    private boolean IS_SPEED_TEST_SERVER_FLAG = true;
+    private boolean LOG_STATE_FLAG = false;
+    private boolean LOG_CELL_FLAG = false;
+    private boolean LOG_WIFI_FLAG = false;
 
     private TelephonyManager mTelephonyManager;
     private WifiManager mWifiManager;
@@ -104,16 +105,40 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
         LOG_STATE_FLAG = flag;
     }
 
+    public boolean isLOG_WIFI_FLAG() {
+        return LOG_WIFI_FLAG;
+    }
+
+    public void setLOG_WIFI_FLAG(boolean LOG_WIFI_FLAG) {
+        this.LOG_WIFI_FLAG = LOG_WIFI_FLAG;
+    }
+
+    public boolean isLOG_CELL_FLAG() {
+        return LOG_CELL_FLAG;
+    }
+
+    public void setLOG_CELL_FLAG(boolean LOG_CELL_FLAG) {
+        this.LOG_CELL_FLAG = LOG_CELL_FLAG;
+    }
+
+    public LogFile getmLogFileGps() {
+        return mLogFileGps;
+    }
+
     public LogFile getmLogFileState() {
         return mLogFileState;
     }
 
-    public FileWriter getMLogState() {
-        return getmLogFileState().getWriter();
+    public LogFile getmLogFileCell() {
+        return mLogFileCell;
     }
 
-    public void setmLogFileState(LogFile mLogFileState) {
-        this.mLogFileState = mLogFileState;
+    public LogFile getmLogFileWifiDisc() {
+        return mLogFileWifiDisc;
+    }
+
+    public LogFile getmLogFileConn() {
+        return mLogFileConn;
     }
 
     public SimpleDateFormat getFormatterClock() {
@@ -122,20 +147,6 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
 
     public SharedPreferences getSharedPref() {
         return sharedPref;
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        actionBarActivityOnCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_basic_gps_logging);
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment()).commit();
-        }
     }
 
     public void actionBarActivityOnCreate(Bundle savedInstanceState) {
