@@ -8,8 +8,11 @@ import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.net.wifi.ScanResult;
+import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -23,6 +26,7 @@ import android.telephony.CellSignalStrengthCdma;
 import android.telephony.CellSignalStrengthGsm;
 import android.telephony.CellSignalStrengthLte;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -53,11 +57,16 @@ import edu.purdue.PavementPatchingTracker.utils.LogFile;
 public class BasicGpsLoggingActivity extends ActionBarActivity implements
         LocationListener {
 
+    /* By default, all will be logged.
+    *
+    * However, for the server side app, only cell strength should be logged, while for the client
+    * side app, only the Wifi info should be logged.
+    */
     private final boolean LOG_GPS_FLAG = true;
 
-    private boolean LOG_STATE_FLAG = false;
-    private boolean LOG_CELL_FLAG = false;
-    private boolean LOG_WIFI_FLAG = false;
+    private boolean LOG_STATE_FLAG = true;
+    private boolean LOG_CELL_FLAG = true;
+    private boolean LOG_WIFI_FLAG = true;
 
     private TelephonyManager mTelephonyManager;
     private WifiManager mWifiManager;
@@ -69,7 +78,11 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
     private LogFile mLogFileState = new LogFile();
     private LogFile mLogFileCell = new LogFile();
     private LogFile mLogFileWifiDisc = new LogFile();
-    private LogFile mLogFileConn = new LogFile();
+    private LogFile mLogFileWifiConn = new LogFile();
+
+    // For Wifi connection/disconnection detection.
+    private boolean mWifiConnectedFlag = false;
+
     private LocationManager mLocationManager;
 
     private TextView textViewTime;
@@ -137,8 +150,8 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
         return mLogFileWifiDisc;
     }
 
-    public LogFile getmLogFileConn() {
-        return mLogFileConn;
+    public LogFile getmLogFileWifiConn() {
+        return mLogFileWifiConn;
     }
 
     public SimpleDateFormat getFormatterClock() {
@@ -418,6 +431,15 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
                     "BasicActCellWrite");
 
         }
+
+        // Only log Wifi info without scheduling any new scan if connected to any Wifi access point.
+        if(mWifiConnectedFlag) {
+            // Connected Wifi.
+
+            // All available Wifi info.
+            LogFileWriteAllWifiInfo(LOG_WIFI_FLAG, mWifiConnectedFlag,
+                    mLogFileWifiConn, "BasicActWifiConnWrite");
+        }
     }
 
     @Override
@@ -451,6 +473,9 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
 
         mLogFileWifiDisc = createLogFile(LOG_WIFI_FLAG, mLogFileWifiDisc,
                 "wifi_disc", getString(R.string.wifi_disc_log_file_head), "BasicWifiDiscLogCreate");
+
+        mLogFileWifiDisc = createLogFile(LOG_WIFI_FLAG, mLogFileWifiConn,
+                "wifi_conn", getString(R.string.wifi_conn_log_file_head), "BasicWifiConnLogCreate");
 
     }
 
@@ -492,6 +517,7 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
         mLogFileState = closeLogFile(LOG_STATE_FLAG, mLogFileState, "closeStateLog");
         mLogFileCell = closeLogFile(LOG_CELL_FLAG, mLogFileCell, "closeCellLog");
         mLogFileWifiDisc = closeLogFile(LOG_WIFI_FLAG, mLogFileWifiDisc, "closeWifiDiscLog");
+        mLogFileWifiConn = closeLogFile(LOG_WIFI_FLAG, mLogFileWifiConn, "closeWifiConnLog");
     }
 
     public void LogFileWrite(boolean logFlag, LogFile logFile, String string, String errorTag) {
@@ -549,37 +575,76 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
     }
 
     private class WifiScanReceiver extends BroadcastReceiver {
-        public void onReceive(Context c, Intent intent) {
-
-            long cur_time = System.currentTimeMillis();
-            long elapsed_time = android.os.SystemClock.elapsedRealtime();
-
-            List<ScanResult> wifiScanList = mWifiManager.getScanResults();
-            wifis = new String[wifiScanList.size()];
-
-            for (int i = 0; i < wifiScanList.size(); i++) {
-                wifis[i] = i + ", " + (wifiScanList.get(i)).SSID + ", "
-                        + (wifiScanList.get(i)).BSSID + ", "
-                        + (wifiScanList.get(i)).level + ", "
-                        + (wifiScanList.get(i)).frequency + ", "
-                        + (wifiScanList.get(i)).timestamp;
-
-//                Log.i("ZygLabs", wifis[i]);
+        public void onReceive(Context context, Intent intent) {
+            ConnectivityManager conMan = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo netInfo = conMan.getActiveNetworkInfo();
+            if (netInfo != null && netInfo.getType() == ConnectivityManager.TYPE_WIFI) {
+                mWifiConnectedFlag = true;
+            } else{
+                mWifiConnectedFlag = false;
             }
 
+            // Log all available Wifi info and schedule a new scan if not connected to any Wifi
+            // access point.
+            if(!mWifiConnectedFlag) {
+                LogFileWriteAllWifiInfo(LOG_WIFI_FLAG, mWifiConnectedFlag,
+                        mLogFileWifiDisc, "BasicActWifiDiscWrite");
+                mWifiManager.startScan();
+            }
+        }
+    }
 
-            String string = "------\n"
+    public void LogFileWriteAllWifiInfo(boolean logFlag, boolean logConnectedWifiSSID,
+                                        LogFile logFile, String errorTag) {
+        long cur_time = System.currentTimeMillis();
+        long elapsed_time = android.os.SystemClock.elapsedRealtime();
+
+        List<ScanResult> wifiScanList = mWifiManager.getScanResults();
+        wifis = new String[wifiScanList.size()];
+
+        for (int i = 0; i < wifiScanList.size(); i++) {
+            wifis[i] = i + ", " + (wifiScanList.get(i)).SSID + ", "
+                    + (wifiScanList.get(i)).BSSID + ", "
+                    + (wifiScanList.get(i)).level + ", "
+                    + (wifiScanList.get(i)).frequency + ", "
+                    + (wifiScanList.get(i)).timestamp;
+
+//                Log.i("ZygLabs", wifis[i]);
+        }
+
+        String string;
+
+        if(logConnectedWifiSSID) {
+            string = "------\n"
+                    + formatterClock.format(cur_time) + ", " + cur_time + ", " + elapsed_time + "," + getCurrentSsid(this)
+                    + "\n------\n";
+            for (int i = 0; i < wifis.length; i++) {
+                string = string + wifis[i] + "\n";
+            }
+        }else{
+            string = "------\n"
                     + formatterClock.format(cur_time) + ", " + cur_time + ", " + elapsed_time
                     + "\n------\n";
             for (int i = 0; i < wifis.length; i++) {
                 string = string + wifis[i] + "\n";
             }
-
-            LogFileWrite(LOG_WIFI_FLAG, mLogFileWifiDisc,
-                    string, "BasicActWifiDiscWrite");
-
-            mWifiManager.startScan();
         }
+
+        LogFileWrite(logFlag, logFile,
+                string, errorTag);
     }
 
+    public static String getCurrentSsid(Context context) {
+        String ssid = null;
+        ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        if (networkInfo.isConnected()) {
+            final WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+            final WifiInfo connectionInfo = wifiManager.getConnectionInfo();
+            if (connectionInfo != null && !TextUtils.isEmpty(connectionInfo.getSSID())) {
+                ssid = connectionInfo.getSSID();
+            }
+        }
+        return ssid;
+    }
 }

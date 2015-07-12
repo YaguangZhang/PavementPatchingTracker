@@ -54,7 +54,8 @@
     <string name="log_file_write_error">Could not log into file!\n</string>
 
     <string name="cell_log_file_head">"% Time, GPS time, lat, lon, speed, bearing, gsmIds, gsmDbms, gsmTimeStamps, cdmaIds, cdmaDbms, cdmaTimeStamps, lteIds, lteDbms, lteTimeStamps\n"</string>
-    <string name="wifi_disc_log_file_head">"% ------\nTime, GPS time, timeStamp (Time since boot)\nNum, SSID, BSSID, RssiDbm, frequency, timeStamp\n"</string>
+    <string name="wifi_disc_log_file_head">"% ------\nTime, GPS time, GpsTimeStamp (Time since boot)\nNum, SSID, BSSID, RssiDbm, frequency, timeStamp\n"</string>
+    <string name="wifi_conn_log_file_head">"% ------\nTime, GPS time, GpsTimeStamp (Time since boot), connectedWifiSSID\nNum, SSID, BSSID, RssiDbm, frequency, timeStamp\n"</string>
 
     <string name="gps_please_enable_it">Your GPS seems to be disabled. Please check and enalbe it.</string>
     <string name="gps_warning_may_not_working">Warning! The location logger may crash without GPS service.</string>

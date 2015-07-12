@@ -1,13 +1,9 @@
 package edu.purdue.PavementPatchingTracker;
 
-import android.content.Context;
 import android.net.wifi.WifiConfiguration;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.util.Log;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import edu.purdue.PavementPatchingTracker.utils.WifiAdmin;
 
 /**
  * Created by Zyglabs on 7/9/15.
@@ -29,6 +25,9 @@ public class WifiSpeedTestServerActivity extends BasicGpsLoggingActivity
         return PASSWORD;
     }
 
+    private WifiAdmin mWifiAdmin;
+    private WifiConfiguration mWifiCon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,90 +38,35 @@ public class WifiSpeedTestServerActivity extends BasicGpsLoggingActivity
     }
 
     @Override
-    protected void onResume(){
-        super.onResume();
+    protected void onStart(){
+        super.onStart();
 
-        // Create the Wifi hotspot.
-        createWifiAccessPoint();
+        // Create Wifi manager if necessary.
+        if(mWifiAdmin == null) {
+            mWifiAdmin = new WifiAdmin(this);
+        }
+
+        mWifiCon = mWifiAdmin.createWifiAccessPoint(SSID, PASSWORD);
+
+//        // Close the Wifi.
+//        mWifiAdmin.closeWifi();
+//        // Create the Wifi hotspot.
+//        mWifiCon = mWifiAdmin.CreateWifiInfo(SSID, PASSWORD, 3);
+//        mWifiAdmin.addNetwork(mWifiCon);
+//        // Make sure Wifi is on.
+//        mWifiAdmin.openWifi();
     }
 
-    private void createWifiAccessPoint() {
-        WifiManager wifiManager = (WifiManager)getBaseContext().getSystemService(Context.WIFI_SERVICE);
-        if(wifiManager.isWifiEnabled())
-        {
-            wifiManager.setWifiEnabled(false);
-        }
-        Method[] wmMethods = wifiManager.getClass().getDeclaredMethods();
-        boolean methodFound=false;
-        for(Method method: wmMethods){
-            if(method.getName().equals("setWifiApEnabled")){
-                methodFound=true;
-                WifiConfiguration netConfig = new WifiConfiguration();
+    @Override
+    protected void onStop() {
+        super.onStop();
 
-                netConfig.SSID = "\""+ SSID + "\"";
-                netConfig.hiddenSSID = false;
-                netConfig.preSharedKey  = PASSWORD;
-                netConfig.wepKeys[0] = "\"" + PASSWORD + "\"";
-                netConfig.wepTxKeyIndex = 0;
-                netConfig.status = WifiConfiguration.Status.ENABLED;
+        // Close the Wifi.
+        mWifiCon = mWifiAdmin.closeWifiAccessPoint(mWifiCon);
 
-                netConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
-                netConfig.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.OPEN);
-                netConfig.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.SHARED);
-                netConfig.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
-                netConfig.allowedProtocols.set(WifiConfiguration.Protocol.WPA);
-                netConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
-                netConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
-                netConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
-                netConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
-                netConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP40);
-                netConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP104);
-
-                wifiManager.saveConfiguration();
-
-                try {
-                    boolean apstatus=(Boolean) method.invoke(wifiManager, netConfig, true);
-                    Log.i("WifiSpeedTestServer", "Creating a Wi-Fi Network \"" + netConfig.SSID + "\"");
-                    for (Method isWifiApEnabledmethod: wmMethods)
-                    {
-                        if(isWifiApEnabledmethod.getName().equals("isWifiApEnabled")){
-                            while(!(Boolean)isWifiApEnabledmethod.invoke(wifiManager));
-                            for(Method method1: wmMethods){
-                                if(method1.getName().equals("getWifiApState")){
-                                    int apstate;
-                                    apstate=(Integer)method1.invoke(wifiManager);
-                                    netConfig=(WifiConfiguration)method1.invoke(wifiManager);
-                                    Log.i("WifiSpeedTestServer", "\nSSID:"+netConfig.SSID+"\nPassword:"+netConfig.preSharedKey+"\n");
-                                }
-                            }
-                        }
-                    }
-
-                    if(apstatus)
-                    {
-                        System.out.println("SUCCESSdddd");
-                        //statusView.append("\nAccess Point Created!");
-                        //finish();
-                        //Intent searchSensorsIntent = new Intent(this,SearchSensors.class);
-                        //startActivity(searchSensorsIntent);
-                    }else
-                    {
-                        System.out.println("FAILED");
-                        //statusView.append("\nAccess Point Creation failed!");
-                    }
-                } catch (IllegalArgumentException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        if(!methodFound){
-             Log.i("WifiSpeedTestServer", "Your phone's API does not contain setWifiApEnabled method to configure an access point");
-        }
-
+//        // Remove the Wifi hotspot.
+//        mWifiAdmin.removeWifi(mWifiCon);
+//        mWifiCon = null;
 
     }
 

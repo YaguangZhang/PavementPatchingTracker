@@ -6,7 +6,6 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="wifispeed" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -26,6 +25,13 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="PavementPatchingTracker" />
   </component>
@@ -34,14 +40,81 @@
       <file leaf-file-name="BasicGpsLoggingActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/BasicGpsLoggingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5357144">
-              <caret line="468" column="0" selection-start-line="468" selection-start-column="0" selection-end-line="468" selection-end-column="0" />
+            <state vertical-scroll-proportion="-93.25">
+              <caret line="624" column="12" selection-start-line="624" selection-start-column="12" selection-end-line="624" selection-end-column="12" />
               <folding>
-                <element signature="e#3171#3172#0" expanded="true" />
-                <element signature="e#3208#3209#0" expanded="true" />
-                <element signature="e#6361#6393#0" expanded="true" />
-                <element signature="e#10081#10118#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3202#3203#0" expanded="true" />
+                <element signature="e#3239#3240#0" expanded="true" />
+                <element signature="e#3273#3274#0" expanded="true" />
+                <element signature="e#3303#3304#0" expanded="true" />
+                <element signature="e#3349#3350#0" expanded="true" />
+                <element signature="e#3387#3388#0" expanded="true" />
+                <element signature="e#3426#3427#0" expanded="true" />
+                <element signature="e#3461#3462#0" expanded="true" />
+                <element signature="e#3517#3518#0" expanded="true" />
+                <element signature="e#3565#3566#0" expanded="true" />
+                <element signature="e#3614#3615#0" expanded="true" />
+                <element signature="e#3651#3652#0" expanded="true" />
+                <element signature="e#3691#3692#0" expanded="true" />
+                <element signature="e#3727#3728#0" expanded="true" />
+                <element signature="e#3786#3787#0" expanded="true" />
+                <element signature="e#3836#3837#0" expanded="true" />
+                <element signature="e#3876#3877#0" expanded="true" />
+                <element signature="e#3912#3913#0" expanded="true" />
+                <element signature="e#3971#3972#0" expanded="true" />
+                <element signature="e#4021#4022#0" expanded="true" />
+                <element signature="e#4060#4061#0" expanded="true" />
+                <element signature="e#4094#4095#0" expanded="true" />
+                <element signature="e#4135#4136#0" expanded="true" />
+                <element signature="e#4171#4172#0" expanded="true" />
+                <element signature="e#4211#4212#0" expanded="true" />
+                <element signature="e#4246#4247#0" expanded="true" />
+                <element signature="e#4290#4291#0" expanded="true" />
+                <element signature="e#4329#4330#0" expanded="true" />
+                <element signature="e#4373#4374#0" expanded="true" />
+                <element signature="e#4412#4413#0" expanded="true" />
+                <element signature="e#4463#4464#0" expanded="true" />
+                <element signature="e#4500#4501#0" expanded="true" />
+                <element signature="e#4548#4549#0" expanded="true" />
+                <element signature="e#4581#4582#0" expanded="true" />
+                <element signature="e#4988#5034#0" expanded="true" />
+                <element signature="e#5224#5257#0" expanded="true" />
+                <element signature="e#5913#5962#0" expanded="true" />
+                <element signature="e#6172#6227#0" expanded="true" />
+                <element signature="e#6812#6844#0" expanded="true" />
+                <element signature="e#6912#6954#0" expanded="true" />
+                <element signature="e#10532#10569#0" expanded="true" />
+                <element signature="e#11266#11305#0" expanded="true" />
+                <element signature="e#15935#15972#0" expanded="true" />
+                <element signature="e#16091#16128#0" expanded="true" />
+                <element signature="e#16245#16283#0" expanded="true" />
+                <element signature="e#16412#16455#0" expanded="true" />
+                <element signature="e#16588#16631#0" expanded="true" />
+                <element signature="e#17588#17629#0" expanded="true" />
+                <element signature="e#19083#19123#0" expanded="true" />
+                <element signature="e#20191#20231#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WifiSpeedTestClientActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestClientActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.821429">
+              <caret line="57" column="119" selection-start-line="57" selection-start-column="119" selection-end-line="57" selection-end-column="119" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,17 +135,17 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/PPTrackerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+              <caret line="41" column="56" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WifiSpeedTestServerActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WifiSpeedTestServerActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestServerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41935483">
-              <caret line="61" column="36" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="36" />
+            <state vertical-scroll-proportion="2.6363637">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,11 +153,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WifiAdmin.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WifiAdmin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/utils/WifiAdmin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.428571">
-              <caret line="196" column="38" selection-start-line="196" selection-start-column="34" selection-end-line="196" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.6687697">
+              <caret line="280" column="23" selection-start-line="268" selection-start-column="22" selection-end-line="280" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,11 +165,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <file leaf-file-name="WifiApManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/utils/WifiApManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+              <caret line="33" column="78" selection-start-line="33" selection-start-column="78" selection-end-line="33" selection-end-column="78" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -445,9 +530,9 @@
                 <option name="name" value="preReleaseBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:appcompat-v7:19.1.0" />
+                <option name="description" value="Prepare com.android.support:appcompat-v7:22.0.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComAndroidSupportAppcompatV71910Library" />
+                <option name="name" value="prepareComAndroidSupportAppcompatV72200Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:support-v4:22.0.0" />
@@ -945,9 +1030,9 @@
                 <option name="name" value="preReleaseBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:appcompat-v7:19.1.0" />
+                <option name="description" value="Prepare com.android.support:appcompat-v7:22.0.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComAndroidSupportAppcompatV71910Library" />
+                <option name="name" value="prepareComAndroidSupportAppcompatV72200Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:support-v4:22.0.0" />
@@ -1142,7 +1227,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4281876138000" />
+        <entry key="$PROJECT_DIR$" value="4282667983000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1297,7 +1382,7 @@
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-tree/4.0/asm-tree-4.0-sources.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-tree/4.0/asm-tree-4.0.jar" />
                             <option value="$USER_HOME$/Documents/Android Studio/sdk/extras/google/m2repository/com/google/android/gms/play-services/7.0.0/play-services-7.0.0.aar" />
-                            <option value="$USER_HOME$/Documents/Android Studio/sdk/extras/android/m2repository/com/android/support/appcompat-v7/19.1.0/appcompat-v7-19.1.0.aar" />
+                            <option value="$USER_HOME$/Documents/Android Studio/sdk/extras/android/m2repository/com/android/support/appcompat-v7/22.0.0/appcompat-v7-22.0.0.aar" />
                             <option value="$USER_HOME$/Documents/Android Studio/sdk/extras/google/m2repository/com/google/android/gms/play-services-ads/7.0.0/play-services-ads-7.0.0.aar" />
                             <option value="$USER_HOME$/Documents/Android Studio/sdk/extras/google/m2repository/com/google/android/gms/play-services-analytics/7.0.0/play-services-analytics-7.0.0.aar" />
                             <option value="$USER_HOME$/Documents/Android Studio/sdk/extras/google/m2repository/com/google/android/gms/play-services-appindexing/7.0.0/play-services-appindexing-7.0.0.aar" />
@@ -1450,23 +1535,25 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_pptracker.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_pptracker.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/Utils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/GPSLoggerFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/MainLoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/LogFile.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiApManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/CombineActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/BasicGpsLoggingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/TruckActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/SimplifiedCombineActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/PPTrackerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/KartActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/utils/WifiAdmin.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/PPTrackerActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/utils/WifiApManager.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/BasicGpsLoggingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestClientActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestServerActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/utils/WifiAdmin.java" />
       </list>
     </option>
   </component>
@@ -1797,6 +1884,15 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1928,17 +2024,17 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39898133" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39388794" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41256368" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2005,87 +2101,45 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestServerActivity.java</url>
-          <line>59</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestServerActivity.java</url>
-          <line>83</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestServerActivity.java</url>
-          <line>117</line>
+          <line>31</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestServerActivity.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestServerActivity.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/utils/WifiAdmin.java</url>
+          <line>154</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/utils/WifiAdmin.java</url>
+          <line>276</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="26" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/PPTrackerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="161" column="17" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Documents/Android Studio/sdk/platforms/android-21/android.jar!/android/app/Activity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="12" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/BasicGpsLoggingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="284" column="28" selection-start-line="284" selection-start-column="28" selection-end-line="284" selection-end-column="28" />
-          <folding>
-            <element signature="e#3171#3172#0" expanded="true" />
-            <element signature="e#3208#3209#0" expanded="true" />
-            <element signature="e#6361#6393#0" expanded="true" />
-            <element signature="e#10081#10118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/PPTrackerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="161" column="17" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Documents/Android Studio/sdk/platforms/android-21/android.jar!/android/app/Activity.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2240,16 +2294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_basic_gps_logging.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8219585">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Documents/Android Studio/sdk/platforms/android-21/android.jar!/android/location/LocationManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3904762">
@@ -2264,34 +2308,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25714287">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Documents/Android Studio/sdk/platforms/android-21/android.jar!/android/app/Activity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/edu/purdue/PavementPatchingTracker/R.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0">
           <caret line="1507" column="32" selection-start-line="1507" selection-start-column="32" selection-end-line="1507" selection-end-column="32" />
           <folding>
-            <element signature="e#0#220074#0" expanded="false" />
+            <element signature="e#0#395796#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2384,18 +2406,299 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4726688">
-          <caret line="62" column="43" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/KartActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2464285">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Documents/Android Studio/sdk/platforms/android-21/android.jar!/android/os/Parcel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8088235">
+          <caret line="460" column="0" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_basic_gps_logging.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Documents/Android Studio/sdk/platforms/android-21/android.jar!/android/net/wifi/WifiManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40833333">
+          <caret line="54" column="35" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+          <folding>
+            <element signature="e#2806#2807#0" expanded="true" />
+            <element signature="e#2857#2858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="78" selection-start-line="20" selection-start-column="78" selection-end-line="20" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Documents/Android Studio/sdk/platforms/android-21/android.jar!/android/app/Instrumentation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="225" column="16" selection-start-line="225" selection-start-column="16" selection-end-line="225" selection-end-column="16" />
+          <folding>
+            <element signature="e#1108#1109#0" expanded="true" />
+            <element signature="e#1159#1160#0" expanded="true" />
+            <element signature="e#7015#7016#0" expanded="true" />
+            <element signature="e#7066#7067#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Documents/Android Studio/sdk/platforms/android-21/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Android Studio/sdk/sources/android-21/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#260237#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#36141#36142#0" expanded="false" />
+            <element signature="e#36202#36203#0" expanded="false" />
+            <element signature="e#36963#36978#0" expanded="false" />
+            <element signature="e#38000#38001#0" expanded="false" />
+            <element signature="e#38030#38031#0" expanded="false" />
+            <element signature="e#38417#38418#0" expanded="false" />
+            <element signature="e#38452#38453#0" expanded="false" />
+            <element signature="e#38560#38561#0" expanded="false" />
+            <element signature="e#38595#38596#0" expanded="false" />
+            <element signature="e#38698#38699#0" expanded="false" />
+            <element signature="e#38736#38737#0" expanded="false" />
+            <element signature="e#38850#38851#0" expanded="false" />
+            <element signature="e#38880#38881#0" expanded="false" />
+            <element signature="e#38994#38995#0" expanded="false" />
+            <element signature="e#39031#39032#0" expanded="false" />
+            <element signature="e#39379#39380#0" expanded="false" />
+            <element signature="e#39409#39410#0" expanded="false" />
+            <element signature="e#40668#40669#0" expanded="false" />
+            <element signature="e#40741#40742#0" expanded="false" />
+            <element signature="e#49531#49532#0" expanded="false" />
+            <element signature="e#49583#49584#0" expanded="false" />
+            <element signature="e#53256#53257#0" expanded="false" />
+            <element signature="e#53286#53287#0" expanded="false" />
+            <element signature="e#55436#55437#0" expanded="false" />
+            <element signature="e#55483#55484#0" expanded="false" />
+            <element signature="e#55699#55700#0" expanded="false" />
+            <element signature="e#55738#55739#0" expanded="false" />
+            <element signature="e#67164#67165#0" expanded="false" />
+            <element signature="e#67192#67193#0" expanded="false" />
+            <element signature="e#67972#67973#0" expanded="false" />
+            <element signature="e#67999#68000#0" expanded="false" />
+            <element signature="e#75727#75728#0" expanded="false" />
+            <element signature="e#75768#75769#0" expanded="false" />
+            <element signature="e#80051#80052#0" expanded="false" />
+            <element signature="e#80078#80079#0" expanded="false" />
+            <element signature="e#81776#81777#0" expanded="false" />
+            <element signature="e#81803#81804#0" expanded="false" />
+            <element signature="e#83854#83855#0" expanded="false" />
+            <element signature="e#83887#83888#0" expanded="false" />
+            <element signature="e#91283#91284#0" expanded="false" />
+            <element signature="e#91334#91335#0" expanded="false" />
+            <element signature="e#97560#97561#0" expanded="false" />
+            <element signature="e#97612#97613#0" expanded="false" />
+            <element signature="e#97782#97783#0" expanded="false" />
+            <element signature="e#97836#97837#0" expanded="false" />
+            <element signature="e#105557#105558#0" expanded="false" />
+            <element signature="e#105585#105586#0" expanded="false" />
+            <element signature="e#106960#106961#0" expanded="false" />
+            <element signature="e#106988#106989#0" expanded="false" />
+            <element signature="e#108012#108013#0" expanded="false" />
+            <element signature="e#108040#108041#0" expanded="false" />
+            <element signature="e#109490#109491#0" expanded="false" />
+            <element signature="e#109518#109519#0" expanded="false" />
+            <element signature="e#110748#110749#0" expanded="false" />
+            <element signature="e#110776#110777#0" expanded="false" />
+            <element signature="e#115258#115259#0" expanded="false" />
+            <element signature="e#115282#115283#0" expanded="false" />
+            <element signature="e#119787#119788#0" expanded="false" />
+            <element signature="e#119814#119815#0" expanded="false" />
+            <element signature="e#131688#131689#0" expanded="false" />
+            <element signature="e#131725#131726#0" expanded="false" />
+            <element signature="e#134525#134526#0" expanded="false" />
+            <element signature="e#134589#134590#0" expanded="false" />
+            <element signature="e#135814#135815#0" expanded="false" />
+            <element signature="e#135871#135872#0" expanded="false" />
+            <element signature="e#136207#136208#0" expanded="false" />
+            <element signature="e#136264#136265#0" expanded="false" />
+            <element signature="e#136566#136567#0" expanded="false" />
+            <element signature="e#136604#136605#0" expanded="false" />
+            <element signature="e#136740#136741#0" expanded="false" />
+            <element signature="e#136803#136804#0" expanded="false" />
+            <element signature="e#138400#138401#0" expanded="false" />
+            <element signature="e#138427#138428#0" expanded="false" />
+            <element signature="e#140129#140130#0" expanded="false" />
+            <element signature="e#140170#140171#0" expanded="false" />
+            <element signature="e#140364#140365#0" expanded="false" />
+            <element signature="e#140409#140410#0" expanded="false" />
+            <element signature="e#142119#142120#0" expanded="false" />
+            <element signature="e#142155#142156#0" expanded="false" />
+            <element signature="e#151843#151844#0" expanded="false" />
+            <element signature="e#151889#151890#0" expanded="false" />
+            <element signature="e#153631#153632#0" expanded="false" />
+            <element signature="e#153685#153686#0" expanded="false" />
+            <element signature="e#168937#168938#0" expanded="false" />
+            <element signature="e#168985#168986#0" expanded="false" />
+            <element signature="e#170793#170794#0" expanded="false" />
+            <element signature="e#170839#170840#0" expanded="false" />
+            <element signature="e#193306#193307#0" expanded="false" />
+            <element signature="e#193338#193339#0" expanded="false" />
+            <element signature="e#193517#193518#0" expanded="false" />
+            <element signature="e#193550#193551#0" expanded="false" />
+            <element signature="e#194114#194115#0" expanded="false" />
+            <element signature="e#194160#194161#0" expanded="false" />
+            <element signature="e#196059#196060#0" expanded="false" />
+            <element signature="e#196088#196089#0" expanded="false" />
+            <element signature="e#197808#197809#0" expanded="false" />
+            <element signature="e#197832#197833#0" expanded="false" />
+            <element signature="e#200003#200004#0" expanded="false" />
+            <element signature="e#200031#200032#0" expanded="false" />
+            <element signature="e#209802#209803#0" expanded="false" />
+            <element signature="e#209835#209836#0" expanded="false" />
+            <element signature="e#212070#212071#0" expanded="false" />
+            <element signature="e#212112#212113#0" expanded="false" />
+            <element signature="e#212704#212705#0" expanded="false" />
+            <element signature="e#212733#212734#0" expanded="false" />
+            <element signature="e#212773#212774#0" expanded="false" />
+            <element signature="e#212807#212808#0" expanded="false" />
+            <element signature="e#219273#219274#0" expanded="false" />
+            <element signature="e#219332#219333#0" expanded="false" />
+            <element signature="e#220741#220742#0" expanded="false" />
+            <element signature="e#220796#220797#0" expanded="false" />
+            <element signature="e#221939#221940#0" expanded="false" />
+            <element signature="e#221966#221967#0" expanded="false" />
+            <element signature="e#234146#234147#0" expanded="false" />
+            <element signature="e#234176#234177#0" expanded="false" />
+            <element signature="e#247227#247228#0" expanded="false" />
+            <element signature="e#247293#247294#0" expanded="false" />
+            <element signature="e#247762#247763#0" expanded="false" />
+            <element signature="e#247794#247795#0" expanded="false" />
+            <element signature="e#256753#256754#0" expanded="false" />
+            <element signature="e#256784#256785#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Android Studio/sdk/sources/android-21/android/app/Instrumentation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26253688">
+          <caret line="1218" column="16" selection-start-line="1218" selection-start-column="16" selection-end-line="1218" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#74953#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6335#6336#0" expanded="false" />
+            <element signature="e#6363#6364#0" expanded="false" />
+            <element signature="e#9038#9039#0" expanded="false" />
+            <element signature="e#9074#9075#0" expanded="false" />
+            <element signature="e#9286#9287#0" expanded="false" />
+            <element signature="e#9319#9320#0" expanded="false" />
+            <element signature="e#9846#9847#0" expanded="false" />
+            <element signature="e#9880#9881#0" expanded="false" />
+            <element signature="e#10098#10099#0" expanded="false" />
+            <element signature="e#10142#10143#0" expanded="false" />
+            <element signature="e#18184#18185#0" expanded="false" />
+            <element signature="e#18221#18222#0" expanded="false" />
+            <element signature="e#18395#18396#0" expanded="false" />
+            <element signature="e#18433#18434#0" expanded="false" />
+            <element signature="e#18654#18655#0" expanded="false" />
+            <element signature="e#18691#18692#0" expanded="false" />
+            <element signature="e#18826#18827#0" expanded="false" />
+            <element signature="e#18862#18863#0" expanded="false" />
+            <element signature="e#19032#19033#0" expanded="false" />
+            <element signature="e#19076#19077#0" expanded="false" />
+            <element signature="e#38096#38097#0" expanded="false" />
+            <element signature="e#38126#38127#0" expanded="false" />
+            <element signature="e#46892#46893#0" expanded="false" />
+            <element signature="e#46926#46927#0" expanded="false" />
+            <element signature="e#47210#47211#0" expanded="false" />
+            <element signature="e#47246#47247#0" expanded="false" />
+            <element signature="e#48241#48242#0" expanded="false" />
+            <element signature="e#48274#48275#0" expanded="false" />
+            <element signature="e#49551#49552#0" expanded="false" />
+            <element signature="e#49590#49591#0" expanded="false" />
+            <element signature="e#49918#49919#0" expanded="false" />
+            <element signature="e#49963#49964#0" expanded="false" />
+            <element signature="e#51411#51420#0" expanded="false" />
+            <element signature="e#53416#53417#0" expanded="false" />
+            <element signature="e#53458#53459#0" expanded="false" />
+            <element signature="e#53578#53579#0" expanded="false" />
+            <element signature="e#53620#53621#0" expanded="false" />
+            <element signature="e#72041#72042#0" expanded="false" />
+            <element signature="e#72076#72077#0" expanded="false" />
+            <element signature="e#72962#72963#0" expanded="false" />
+            <element signature="e#73002#73003#0" expanded="false" />
+            <element signature="e#73642#73643#0" expanded="false" />
+            <element signature="e#73682#73683#0" expanded="false" />
+            <element signature="e#73866#73867#0" expanded="false" />
+            <element signature="e#73906#73907#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/utils/WifiApManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="78" selection-start-line="33" selection-start-column="78" selection-end-line="33" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Android Studio/sdk/sources/android-21/android/net/wifi/WifiManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="16.039286">
+          <caret line="547" column="16" selection-start-line="547" selection-start-column="4" selection-end-line="547" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -2410,65 +2713,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Documents/Android Studio/sdk/platforms/android-21/android.jar!/android/os/Parcel.class">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/PPTrackerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8088235">
-          <caret line="460" column="0" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Documents/Android Studio/sdk/platforms/android-21/android.jar!/android/net/wifi/WifiManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8088235">
-          <caret line="270" column="0" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="56" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/BasicGpsLoggingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5357144">
-          <caret line="468" column="0" selection-start-line="468" selection-start-column="0" selection-end-line="468" selection-end-column="0" />
+        <state vertical-scroll-proportion="-93.25">
+          <caret line="624" column="12" selection-start-line="624" selection-start-column="12" selection-end-line="624" selection-end-column="12" />
           <folding>
-            <element signature="e#3171#3172#0" expanded="true" />
-            <element signature="e#3208#3209#0" expanded="true" />
-            <element signature="e#6361#6393#0" expanded="true" />
-            <element signature="e#10081#10118#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3202#3203#0" expanded="true" />
+            <element signature="e#3239#3240#0" expanded="true" />
+            <element signature="e#3273#3274#0" expanded="true" />
+            <element signature="e#3303#3304#0" expanded="true" />
+            <element signature="e#3349#3350#0" expanded="true" />
+            <element signature="e#3387#3388#0" expanded="true" />
+            <element signature="e#3426#3427#0" expanded="true" />
+            <element signature="e#3461#3462#0" expanded="true" />
+            <element signature="e#3517#3518#0" expanded="true" />
+            <element signature="e#3565#3566#0" expanded="true" />
+            <element signature="e#3614#3615#0" expanded="true" />
+            <element signature="e#3651#3652#0" expanded="true" />
+            <element signature="e#3691#3692#0" expanded="true" />
+            <element signature="e#3727#3728#0" expanded="true" />
+            <element signature="e#3786#3787#0" expanded="true" />
+            <element signature="e#3836#3837#0" expanded="true" />
+            <element signature="e#3876#3877#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#3971#3972#0" expanded="true" />
+            <element signature="e#4021#4022#0" expanded="true" />
+            <element signature="e#4060#4061#0" expanded="true" />
+            <element signature="e#4094#4095#0" expanded="true" />
+            <element signature="e#4135#4136#0" expanded="true" />
+            <element signature="e#4171#4172#0" expanded="true" />
+            <element signature="e#4211#4212#0" expanded="true" />
+            <element signature="e#4246#4247#0" expanded="true" />
+            <element signature="e#4290#4291#0" expanded="true" />
+            <element signature="e#4329#4330#0" expanded="true" />
+            <element signature="e#4373#4374#0" expanded="true" />
+            <element signature="e#4412#4413#0" expanded="true" />
+            <element signature="e#4463#4464#0" expanded="true" />
+            <element signature="e#4500#4501#0" expanded="true" />
+            <element signature="e#4548#4549#0" expanded="true" />
+            <element signature="e#4581#4582#0" expanded="true" />
+            <element signature="e#4988#5034#0" expanded="true" />
+            <element signature="e#5224#5257#0" expanded="true" />
+            <element signature="e#5913#5962#0" expanded="true" />
+            <element signature="e#6172#6227#0" expanded="true" />
+            <element signature="e#6812#6844#0" expanded="true" />
+            <element signature="e#6912#6954#0" expanded="true" />
+            <element signature="e#10532#10569#0" expanded="true" />
+            <element signature="e#11266#11305#0" expanded="true" />
+            <element signature="e#15935#15972#0" expanded="true" />
+            <element signature="e#16091#16128#0" expanded="true" />
+            <element signature="e#16245#16283#0" expanded="true" />
+            <element signature="e#16412#16455#0" expanded="true" />
+            <element signature="e#16588#16631#0" expanded="true" />
+            <element signature="e#17588#17629#0" expanded="true" />
+            <element signature="e#19083#19123#0" expanded="true" />
+            <element signature="e#20191#20231#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/PPTrackerActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestClientActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+        <state vertical-scroll-proportion="-5.821429">
+          <caret line="57" column="119" selection-start-line="57" selection-start-column="119" selection-end-line="57" selection-end-column="119" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/utils/WifiAdmin.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestServerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.428571">
-          <caret line="196" column="38" selection-start-line="196" selection-start-column="34" selection-end-line="196" selection-end-column="38" />
+        <state vertical-scroll-proportion="2.6363637">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/WifiSpeedTestServerActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/utils/WifiAdmin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41935483">
-          <caret line="61" column="36" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.6687697">
+          <caret line="280" column="23" selection-start-line="268" selection-start-column="22" selection-end-line="280" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
