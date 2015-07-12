@@ -395,9 +395,7 @@ public class MainLoginActivity extends ActionBarActivity {
 
         if (loginType.equals("P")){
             intent = new Intent(this, PPTrackerActivity.class);
-        } else
-
-        if (loginType.equals("C")) {
+        } else if (loginType.equals("C")) {
 			intent = new Intent(this, CombineActivity.class);
 		} else if (loginType.equals("K")) {
 			intent = new Intent(this, KartActivity.class);

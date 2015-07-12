@@ -11,8 +11,7 @@ import edu.purdue.PavementPatchingTracker.utils.WifiAdmin;
  * Will create a Wifi spot and
  * TODO: control the Wifi speed test.
  */
-public class WifiSpeedTestServerActivity extends BasicGpsLoggingActivity
-{
+public class WifiSpeedTestServerActivity extends BasicGpsLoggingActivity {
 
     private String SSID = "OpenAgSpeedTestServer";
     private String PASSWORD = "ecemsee288";

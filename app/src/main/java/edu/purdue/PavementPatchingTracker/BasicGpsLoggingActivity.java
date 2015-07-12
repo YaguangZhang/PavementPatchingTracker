@@ -162,10 +162,6 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
         return sharedPref;
     }
 
-    public void actionBarActivityOnCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
     @Override
     protected void onStart() {
         super.onStart();

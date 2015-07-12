@@ -33,8 +33,6 @@ public class KartActivity extends BasicGpsLoggingActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        actionBarActivityOnCreate(savedInstanceState);
-
         setContentView(R.layout.activity_kart);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()

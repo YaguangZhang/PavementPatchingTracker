@@ -44,8 +44,6 @@ public class TruckActivity extends BasicGpsLoggingActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		actionBarActivityOnCreate(savedInstanceState);
-
 		setContentView(R.layout.activity_truck);
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()

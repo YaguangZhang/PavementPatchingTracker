@@ -51,8 +51,7 @@ public class PPTrackerActivity extends WifiSpeedTestServerActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // No need to run super.onCreate() here! Or the app will crash.
-        actionBarActivityOnCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_pptracker);
         if (savedInstanceState == null) {

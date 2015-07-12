@@ -33,6 +33,10 @@ public class WifiAdmin {
     // 定义一个WifiLock
     WifiLock mWifiLock;
 
+    public WifiManager getmWifiManager() {
+        return mWifiManager;
+    }
+
 
     // 构造器
     public WifiAdmin(Context context) {
@@ -150,10 +154,24 @@ public class WifiAdmin {
 
     // 添加一个网络并连接
     public void addNetwork(WifiConfiguration wcg) {
+
         int wcgID = mWifiManager.addNetwork(wcg);
-        boolean b = mWifiManager.enableNetwork(wcgID, true);
-        System.out.println("a--" + wcgID);
-        System.out.println("b--" + b);
+
+        if (!mWifiManager.isWifiEnabled()) {
+            //---wifi is turned off---
+            //---turn on wifi---
+            mWifiManager.setWifiEnabled(true);
+        }
+
+        boolean b = mWifiManager.disconnect();
+        mWifiManager.saveConfiguration();
+        boolean c = mWifiManager.enableNetwork(wcgID, true);
+        mWifiManager.reconnect();
+        mWifiManager.saveConfiguration();
+
+        System.out.println("a(wcgID)--" + wcgID);
+        System.out.println("b(disc)--" + b);
+        System.out.println("c(enable)--" + c);
     }
 
     // 断开指定ID的网络
