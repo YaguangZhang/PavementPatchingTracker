@@ -60,6 +60,8 @@ import edu.purdue.PavementPatchingTracker.utils.LogFile;
 public class BasicGpsLoggingActivity extends ActionBarActivity implements
         LocationListener {
 
+    private final boolean DEBUG_FLAG = false;
+
     /* By default, all will be logged.
     *
     * However, for the server side app, only cell strength should be logged, while for the client
@@ -74,7 +76,7 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
     //TODO: Not finished yet.
     private boolean FORCE_CONN_TO_HOTSPOT = true;
 
-    private boolean GPS_ONLY_FOR_LOC = true;
+    private boolean GPS_ONLY_FOR_LOC = !DEBUG_FLAG;
 
     private TelephonyManager mTelephonyManager;
     private WifiManager mWifiManager;
@@ -440,26 +442,58 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
                         final CellSignalStrengthGsm gsm = ((CellInfoGsm) info).getCellSignalStrength();
                         // do what you need
                         gsmDbms.add(gsm.getDbm());
-                        gsmIds.add(((CellInfoGsm) info).getCellIdentity().toString());
+
+                        String cellId;
+                        if(info.isRegistered()) {
+                            cellId = "(Registered)" + ((CellInfoGsm) info).getCellIdentity().toString();
+                        } else {
+                            cellId = ((CellInfoGsm) info).getCellIdentity().toString();
+                        }
+                        gsmIds.add(cellId);
+
                         gsmTimeStamps.add(info.getTimeStamp());
 
                     } else if (info instanceof CellInfoWcdma) {
                         final CellSignalStrengthWcdma wcdma = ((CellInfoWcdma) info).getCellSignalStrength();
                         // do what you need
                         wcdmaDbms.add(wcdma.getDbm());
-                        wcdmaIds.add(((CellInfoWcdma) info).getCellIdentity().toString());
+
+                        String cellId;
+                        if(info.isRegistered()) {
+                            cellId = "(Registered)" + ((CellInfoWcdma) info).getCellIdentity().toString();
+                        } else {
+                            cellId = ((CellInfoWcdma) info).getCellIdentity().toString();
+                        }
+                        wcdmaIds.add(cellId);
+
                         wcdmaTimeStamps.add(info.getTimeStamp());
                     }else if (info instanceof CellInfoCdma) {
                         final CellSignalStrengthCdma cdma = ((CellInfoCdma) info).getCellSignalStrength();
                         // do what you need
                         cdmaDbms.add(cdma.getDbm());
-                        cdmaIds.add(((CellInfoCdma) info).getCellIdentity().toString());
+
+                        String cellId;
+                        if(info.isRegistered()) {
+                            cellId = "(Registered)" + ((CellInfoCdma) info).getCellIdentity().toString();
+                        } else {
+                            cellId = ((CellInfoCdma) info).getCellIdentity().toString();
+                        }
+                        cdmaIds.add(cellId);
+
                         cdmaTimeStamps.add(info.getTimeStamp());
                     } else if (info instanceof CellInfoLte) {
                         final CellSignalStrengthLte lte = ((CellInfoLte) info).getCellSignalStrength();
                         // do what you need
                         lteDbms.add(lte.getDbm());
-                        lteIds.add(((CellInfoLte) info).getCellIdentity().toString());
+
+                        String cellId;
+                        if(info.isRegistered()) {
+                            cellId = "(Registered)" + ((CellInfoLte) info).getCellIdentity().toString();
+                        } else {
+                            cellId = ((CellInfoLte) info).getCellIdentity().toString();
+                        }
+                        lteIds.add(cellId);
+
                         lteTimeStamps.add(info.getTimeStamp());
                     } else {
                         otherCellInfo.add(info.toString());

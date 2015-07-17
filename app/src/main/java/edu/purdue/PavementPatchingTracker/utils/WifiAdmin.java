@@ -339,7 +339,7 @@ public class WifiAdmin {
 
                     try {
                         boolean apstatus = (Boolean) method.invoke(mWifiManager, netConfig, false);
-                        Log.i("WifiSpeedTestServer", "Turning of the Wi-Fi Network \"" + netConfig.SSID + "\"");
+                        Log.i("WifiSpeedTestServer", "Turning off the Wi-Fi Network \"" + netConfig.SSID + "\"");
 
                         if (apstatus) {
                             System.out.println("SUCCESS");
