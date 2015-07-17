@@ -5,6 +5,7 @@ import android.net.wifi.ScanResult;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.net.wifi.WifiManager.WifiLock;
 import android.util.Log;
 
 import java.lang.reflect.InvocationTargetException;
@@ -30,7 +31,7 @@ public class WifiAdmin {
     // 网络连接列表
     private List<WifiConfiguration> mWifiConfiguration;
     // 定义一个WifiLock
-    WifiManager.WifiLock mWifiLock;
+    WifiLock mWifiLock;
 
     public WifiManager getmWifiManager() {
         return mWifiManager;
@@ -151,7 +152,29 @@ public class WifiAdmin {
     }
 
     // 添加一个网络并连接
-    public void addNetwork(WifiConfiguration wcg) {
+    public void addNetwork(WifiManager wm, WifiConfiguration wcg) {
+
+        int wcgID = wm.addNetwork(wcg);
+
+        if (!wm.isWifiEnabled()) {
+            //---wifi is turned off---
+            //---turn on wifi---
+            wm.setWifiEnabled(true);
+        }
+
+        boolean b = wm.disconnect();
+        wm.saveConfiguration();
+        boolean c = wm.enableNetwork(wcgID, true);
+        wm.reconnect();
+        // TODO: Lock to the Wifi access point specified!
+        wm.saveConfiguration();
+
+        System.out.println("a(wcgID)--" + wcgID);
+        System.out.println("b(disc)--" + b);
+        System.out.println("c(enable)--" + c);
+    }
+
+    public int addNetwork(WifiConfiguration wcg) {
 
         int wcgID = mWifiManager.addNetwork(wcg);
 
@@ -161,16 +184,11 @@ public class WifiAdmin {
             mWifiManager.setWifiEnabled(true);
         }
 
-        boolean b = mWifiManager.disconnect();
-        mWifiManager.saveConfiguration();
-        boolean c = mWifiManager.enableNetwork(wcgID, true);
-        mWifiManager.reconnect();
-        // TODO: Lock to the Wifi access point specified!
+        mWifiManager.disconnect();
+        mWifiManager.enableNetwork(wcgID, true);
         mWifiManager.saveConfiguration();
 
-        System.out.println("a(wcgID)--" + wcgID);
-        System.out.println("b(disc)--" + b);
-        System.out.println("c(enable)--" + c);
+        return wcgID;
     }
 
     // 断开指定ID的网络
@@ -259,24 +277,7 @@ public class WifiAdmin {
         for (Method method : wmMethods) {
             if (method.getName().equals("setWifiApEnabled")) {
                 methodFound = true;
-                netConfig = new WifiConfiguration();
-
-                netConfig.SSID = "\"" + SSID + "\"";
-                netConfig.hiddenSSID = false;
-                netConfig.preSharedKey = PASSWORD;
-                netConfig.wepKeys[0] = "\"" + PASSWORD + "\"";
-                netConfig.wepTxKeyIndex = 0;
-                netConfig.status = WifiConfiguration.Status.ENABLED;
-
-                //TODO: is thisn
-                netConfig.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.OPEN);
-                netConfig.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
-                netConfig.allowedProtocols.set(WifiConfiguration.Protocol.WPA);
-                netConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
-                netConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
-                netConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
-                netConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
-                netConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
+                netConfig = getDefaultHotspotConfig(SSID, PASSWORD);
 
                 mWifiManager.saveConfiguration();
 
@@ -339,7 +340,7 @@ public class WifiAdmin {
 
                     try {
                         boolean apstatus = (Boolean) method.invoke(mWifiManager, netConfig, false);
-                        Log.i("WifiSpeedTestServer", "Turning off the Wi-Fi Network \"" + netConfig.SSID + "\"");
+                        Log.i("WifiSpeedTestServer", "Turning of the Wi-Fi Network \"" + netConfig.SSID + "\"");
 
                         if (apstatus) {
                             System.out.println("SUCCESS");
@@ -368,5 +369,27 @@ public class WifiAdmin {
         }
 
         return null;
+    }
+
+    public WifiConfiguration getDefaultHotspotConfig(String SSID, String PASSWORD){
+        WifiConfiguration netConfig= new WifiConfiguration();
+
+        netConfig.SSID = "\"" + SSID + "\"";
+        netConfig.hiddenSSID = false;
+        netConfig.preSharedKey = PASSWORD;
+        netConfig.wepKeys[0] = "\"" + PASSWORD + "\"";
+        netConfig.wepTxKeyIndex = 0;
+        netConfig.status = WifiConfiguration.Status.ENABLED;
+
+        netConfig.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.OPEN);
+        netConfig.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
+        netConfig.allowedProtocols.set(WifiConfiguration.Protocol.WPA);
+        netConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
+        netConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
+        netConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
+        netConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
+        netConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
+
+        return netConfig;
     }
 }

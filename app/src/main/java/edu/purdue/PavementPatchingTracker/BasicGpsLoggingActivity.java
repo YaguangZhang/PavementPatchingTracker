@@ -1,6 +1,5 @@
 package edu.purdue.PavementPatchingTracker;
 
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -72,9 +71,6 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
     private boolean LOG_STATE_FLAG = true;
     private boolean LOG_CELL_FLAG = true;
     private boolean LOG_WIFI_FLAG = true;
-
-    //TODO: Not finished yet.
-    private boolean FORCE_CONN_TO_HOTSPOT = true;
 
     private boolean GPS_ONLY_FOR_LOC = !DEBUG_FLAG;
 
@@ -396,7 +392,6 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
                         + ", " + location.getAccuracy() + "\n",
                 "BasicActGpsWrite");
 
-        // TODO: Not working!
         if (LOG_CELL_FLAG) {
             ArrayList<Integer> gsmDbms = new ArrayList<>();
             ArrayList<Integer> wcdmaDbms = new ArrayList<>();
@@ -444,7 +439,7 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
                         gsmDbms.add(gsm.getDbm());
 
                         String cellId;
-                        if(info.isRegistered()) {
+                        if (info.isRegistered()) {
                             cellId = "(Registered)" + ((CellInfoGsm) info).getCellIdentity().toString();
                         } else {
                             cellId = ((CellInfoGsm) info).getCellIdentity().toString();
@@ -459,7 +454,7 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
                         wcdmaDbms.add(wcdma.getDbm());
 
                         String cellId;
-                        if(info.isRegistered()) {
+                        if (info.isRegistered()) {
                             cellId = "(Registered)" + ((CellInfoWcdma) info).getCellIdentity().toString();
                         } else {
                             cellId = ((CellInfoWcdma) info).getCellIdentity().toString();
@@ -467,13 +462,13 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
                         wcdmaIds.add(cellId);
 
                         wcdmaTimeStamps.add(info.getTimeStamp());
-                    }else if (info instanceof CellInfoCdma) {
+                    } else if (info instanceof CellInfoCdma) {
                         final CellSignalStrengthCdma cdma = ((CellInfoCdma) info).getCellSignalStrength();
                         // do what you need
                         cdmaDbms.add(cdma.getDbm());
 
                         String cellId;
-                        if(info.isRegistered()) {
+                        if (info.isRegistered()) {
                             cellId = "(Registered)" + ((CellInfoCdma) info).getCellIdentity().toString();
                         } else {
                             cellId = ((CellInfoCdma) info).getCellIdentity().toString();
@@ -487,7 +482,7 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
                         lteDbms.add(lte.getDbm());
 
                         String cellId;
-                        if(info.isRegistered()) {
+                        if (info.isRegistered()) {
                             cellId = "(Registered)" + ((CellInfoLte) info).getCellIdentity().toString();
                         } else {
                             cellId = ((CellInfoLte) info).getCellIdentity().toString();
@@ -530,17 +525,10 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
         if (mWifiConnectedFlag) {
             // Wifi connected.
 
-            if (FORCE_CONN_TO_HOTSPOT) {
-                // Only connections to the hotspot will be treated as valid.
-                //TODO: finish this part.
-                //if (getCurrentSsid(this).equals(SSID)) ;
+            // All available Wifi info.
+            LogFileWriteAllWifiInfo(LOG_WIFI_FLAG, mWifiConnectedFlag,
+                    mLogFileWifiConn, "BasicActWifiConnWrite");
 
-
-            } else {
-                // All available Wifi info.
-                LogFileWriteAllWifiInfo(LOG_WIFI_FLAG, mWifiConnectedFlag,
-                        mLogFileWifiConn, "BasicActWifiConnWrite");
-            }
         }
     }
 
