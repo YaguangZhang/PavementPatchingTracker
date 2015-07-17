@@ -237,4 +237,12 @@
         android:textSize="50sp" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/hiddenTextViewForCell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="hiddenTextViewForCell"
+        android:textSize="15sp" />
+
 </LinearLayout><!-- From: file:/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/src/main/res/layout-land/fragment_pptracker.xml -->

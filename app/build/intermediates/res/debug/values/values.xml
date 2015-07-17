@@ -277,7 +277,8 @@
     <string name="cast_notification_disconnect">Disconnect</string>
     <!-- From: file:/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="cell_log_file_head">"% Time, GPS time, lat, lon, speed, bearing, gsmIds, gsmDbms, gsmTimeStamps, cdmaIds, cdmaDbms, cdmaTimeStamps, lteIds, lteDbms, lteTimeStamps\n"</string>
+    <string name="cell_log_file_head">"% Time, GPS time, lat, lon, speed, bearing, gsmIds, gsmDbms, gsmTimeStamps, cdmaIds, cdmaDbms, cdmaTimeStamps, wcdmaIds, wcdmaDbms, wcdmaTimeStamps, lteIds, lteDbms, lteTimeStamps, otherCellInfo\n"</string>
+    <string name="cell_verbose_log_file_head">"% Time, GPS time (ms), GpsTimeStamp (Time since boot in ms), CellInfoType:{attributes}\n"</string>
     <string name="ckt_state">CKT state: </string>
     <string name="ckt_state_initializing">Initializing…</string>
     <string name="ckt_state_loading">Loading…</string>
@@ -414,8 +415,8 @@
     <!-- From: file:/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="warning_toast_unknown_vehicle">Warning! The vehicle type regestered with this ID is unknown!\nThe preference file may be corrupted!/nYou can try another ID.</string>
-    <string name="wifi_conn_log_file_head">"% ------\nTime, GPS time, GpsTimeStamp (Time since boot), connectedWifiSSID\nNum, SSID, BSSID, RssiDbm, frequency, timeStamp\n"</string>
-    <string name="wifi_disc_log_file_head">"% ------\nTime, GPS time, GpsTimeStamp (Time since boot)\nNum, SSID, BSSID, RssiDbm, frequency, timeStamp\n"</string>
+    <string name="wifi_conn_log_file_head">"% ------\nTime, GPS time (ms), GpsTimeStamp (Time since boot in ms), connectedWifiSSID\nNum, SSID, BSSID, RssiDbm, frequency, timeStamp\n"</string>
+    <string name="wifi_disc_log_file_head">"% ------\nTime, GPS time (ms), GpsTimeStamp (Time since boot in ms)\nNum, SSID, BSSID, RssiDbm, frequency, timeStamp\n"</string>
     <!-- From: file:/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>

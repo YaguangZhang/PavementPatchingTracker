@@ -1,5 +1,6 @@
 package edu.purdue.PavementPatchingTracker;
 
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -22,9 +23,11 @@ import android.telephony.CellInfo;
 import android.telephony.CellInfoCdma;
 import android.telephony.CellInfoGsm;
 import android.telephony.CellInfoLte;
+import android.telephony.CellInfoWcdma;
 import android.telephony.CellSignalStrengthCdma;
 import android.telephony.CellSignalStrengthGsm;
 import android.telephony.CellSignalStrengthLte;
+import android.telephony.CellSignalStrengthWcdma;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -48,7 +51,7 @@ import edu.purdue.PavementPatchingTracker.utils.LogFile;
 
 /*
  * The activity for GPS data recording only.
- * 
+ *
  * @author: Yaguang Zhang
  * Reference: Stephan Williams' LogAccelGpsActivity project.
  * Available at https://github.com/OATS-Group/android-logger
@@ -68,6 +71,11 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
     private boolean LOG_CELL_FLAG = true;
     private boolean LOG_WIFI_FLAG = true;
 
+    //TODO: Not finished yet.
+    private boolean FORCE_CONN_TO_HOTSPOT = true;
+
+    private boolean GPS_ONLY_FOR_LOC = true;
+
     private TelephonyManager mTelephonyManager;
     private WifiManager mWifiManager;
     private WifiScanReceiver mWifiScanReceiver;
@@ -77,8 +85,12 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
     private LogFile mLogFileGps = new LogFile();
     private LogFile mLogFileState = new LogFile();
     private LogFile mLogFileCell = new LogFile();
+    private LogFile mLogFileCellVerbose = new LogFile();
     private LogFile mLogFileWifiDisc = new LogFile();
     private LogFile mLogFileWifiConn = new LogFile();
+
+    // For cell log display on the screen.
+    public String stringLoggedToCell;
 
     // For Wifi connection/disconnection detection.
     private boolean mWifiConnectedFlag = false;
@@ -154,6 +166,14 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
         return mLogFileWifiConn;
     }
 
+    public String getStringLoggedToCell() {
+        return stringLoggedToCell;
+    }
+
+    public void setStringLoggedToCell(String stringLoggedToCell) {
+        this.stringLoggedToCell = stringLoggedToCell;
+    }
+
     public SimpleDateFormat getFormatterClock() {
         return formatterClock;
     }
@@ -211,8 +231,10 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
         /** Todo: May want to improve the GPS performance using fused location provider.
          * https://developer.android.com/training/location/receive-location-updates.html
          */
-        mLocationManager.requestLocationUpdates(
-                LocationManager.NETWORK_PROVIDER, 0, 0, this);
+        if (!GPS_ONLY_FOR_LOC) {
+            mLocationManager.requestLocationUpdates(
+                    LocationManager.NETWORK_PROVIDER, 0, 0, this);
+        }
 
         mLocationManager.requestLocationUpdates(
                 LocationManager.GPS_PROVIDER, 0, 0, this);
@@ -372,23 +394,48 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
                         + ", " + location.getAccuracy() + "\n",
                 "BasicActGpsWrite");
 
+        // TODO: Not working!
         if (LOG_CELL_FLAG) {
             ArrayList<Integer> gsmDbms = new ArrayList<>();
+            ArrayList<Integer> wcdmaDbms = new ArrayList<>();
             ArrayList<Integer> cdmaDbms = new ArrayList<>();
             ArrayList<Integer> lteDbms = new ArrayList<>();
 
             ArrayList<String> gsmIds = new ArrayList<>();
+            ArrayList<String> wcdmaIds = new ArrayList<>();
             ArrayList<String> cdmaIds = new ArrayList<>();
             ArrayList<String> lteIds = new ArrayList<>();
 
+            ArrayList<String> otherCellInfo = new ArrayList<>();
+
             ArrayList<Long> gsmTimeStamps = new ArrayList<>();
+            ArrayList<Long> wcdmaTimeStamps = new ArrayList<>();
             ArrayList<Long> cdmaTimeStamps = new ArrayList<>();
             ArrayList<Long> lteTimeStamps = new ArrayList<>();
 
             // Also log the cell signal strength.
             try {
 
-                for (final CellInfo info : mTelephonyManager.getAllCellInfo()) {
+                List<CellInfo> allCellInfo = mTelephonyManager.getAllCellInfo();
+                cur_time = System.currentTimeMillis();
+                long elapsed_time = android.os.SystemClock.elapsedRealtime();
+
+                LogFileWrite(LOG_CELL_FLAG, mLogFileCellVerbose,
+                        "----- " + formatterClock.format(cur_time) + ", "
+                                + cur_time + "," + elapsed_time + "\n",
+                        "BasicActCellVerboseWrite");
+
+                boolean flagUnkownCellInfoFound = false;
+                for (final CellInfo info : allCellInfo) {
+
+                    cur_time = System.currentTimeMillis();
+                    elapsed_time = android.os.SystemClock.elapsedRealtime();
+
+                    LogFileWrite(LOG_CELL_FLAG, mLogFileCellVerbose,
+                            formatterClock.format(cur_time) + ", " + cur_time + "," + elapsed_time
+                                    + ", " + info.toString() + "\n",
+                            "BasicActCellVerboseWrite");
+
                     if (info instanceof CellInfoGsm) {
                         final CellSignalStrengthGsm gsm = ((CellInfoGsm) info).getCellSignalStrength();
                         // do what you need
@@ -396,7 +443,13 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
                         gsmIds.add(((CellInfoGsm) info).getCellIdentity().toString());
                         gsmTimeStamps.add(info.getTimeStamp());
 
-                    } else if (info instanceof CellInfoCdma) {
+                    } else if (info instanceof CellInfoWcdma) {
+                        final CellSignalStrengthWcdma wcdma = ((CellInfoWcdma) info).getCellSignalStrength();
+                        // do what you need
+                        wcdmaDbms.add(wcdma.getDbm());
+                        wcdmaIds.add(((CellInfoWcdma) info).getCellIdentity().toString());
+                        wcdmaTimeStamps.add(info.getTimeStamp());
+                    }else if (info instanceof CellInfoCdma) {
                         final CellSignalStrengthCdma cdma = ((CellInfoCdma) info).getCellSignalStrength();
                         // do what you need
                         cdmaDbms.add(cdma.getDbm());
@@ -409,32 +462,51 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
                         lteIds.add(((CellInfoLte) info).getCellIdentity().toString());
                         lteTimeStamps.add(info.getTimeStamp());
                     } else {
-                        throw new Exception("Unknown type of cell signal!");
+                        otherCellInfo.add(info.toString());
+                        flagUnkownCellInfoFound = true;
                     }
+                }
+
+                LogFileWrite(LOG_CELL_FLAG, mLogFileCellVerbose,
+                        "=====\n",
+                        "BasicActCellVerboseWrite");
+
+                if (flagUnkownCellInfoFound) {
+                    Log.w("CellStrengthLogger", "Unknown type of cell signal!");
                 }
             } catch (Exception e) {
                 Log.e("CellStrengthLogger", "Unable to obtain cell signal information", e);
             }
 
+            setStringLoggedToCell(formatterClock.format(cur_time) + ", " + cur_time
+                    + ", " + location.getLatitude() + ", "
+                    + location.getLongitude() + ", " + location.getSpeed() + ", "
+                    + location.getBearing() + ", "
+                    + gsmIds + ", " + gsmDbms + ", " + gsmTimeStamps + ", "
+                    + cdmaIds + ", " + cdmaDbms + ", " + cdmaTimeStamps + ", "
+                    + wcdmaIds + ", " + wcdmaDbms + ", " + wcdmaTimeStamps + ", "
+                    + lteIds + ", " + lteDbms + ", " + lteTimeStamps + ","
+                    + otherCellInfo + "\n");
             LogFileWrite(LOG_CELL_FLAG, mLogFileCell,
-                    formatterClock.format(cur_time) + ", " + cur_time
-                            + ", " + location.getLatitude() + ", "
-                            + location.getLongitude() + ", " + location.getSpeed() + ", "
-                            + location.getBearing() + ", "
-                            + gsmIds + ", " + gsmDbms + ", " + gsmTimeStamps + ", "
-                            + cdmaIds + ", " + cdmaDbms + ", " + cdmaTimeStamps + ", "
-                            + lteIds + ", " + lteDbms + ", " + lteTimeStamps + "\n",
+                    getStringLoggedToCell(),
                     "BasicActCellWrite");
-
         }
 
         // Only log Wifi info without scheduling any new scan if connected to any Wifi access point.
-        if(mWifiConnectedFlag) {
-            // Connected Wifi.
+        if (mWifiConnectedFlag) {
+            // Wifi connected.
 
-            // All available Wifi info.
-            LogFileWriteAllWifiInfo(LOG_WIFI_FLAG, mWifiConnectedFlag,
-                    mLogFileWifiConn, "BasicActWifiConnWrite");
+            if (FORCE_CONN_TO_HOTSPOT) {
+                // Only connections to the hotspot will be treated as valid.
+                //TODO: finish this part.
+                //if (getCurrentSsid(this).equals(SSID)) ;
+
+
+            } else {
+                // All available Wifi info.
+                LogFileWriteAllWifiInfo(LOG_WIFI_FLAG, mWifiConnectedFlag,
+                        mLogFileWifiConn, "BasicActWifiConnWrite");
+            }
         }
     }
 
@@ -467,10 +539,13 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
         mLogFileCell = createLogFile(LOG_CELL_FLAG, mLogFileCell,
                 "cell", getString(R.string.cell_log_file_head), "BasicCellLogCreate");
 
+        mLogFileCellVerbose = createLogFile(LOG_CELL_FLAG, mLogFileCellVerbose,
+                "cell_verbose", getString(R.string.cell_verbose_log_file_head), "BasicCellVerboseLogCreate");
+
         mLogFileWifiDisc = createLogFile(LOG_WIFI_FLAG, mLogFileWifiDisc,
                 "wifi_disc", getString(R.string.wifi_disc_log_file_head), "BasicWifiDiscLogCreate");
 
-        mLogFileWifiDisc = createLogFile(LOG_WIFI_FLAG, mLogFileWifiConn,
+        mLogFileWifiConn = createLogFile(LOG_WIFI_FLAG, mLogFileWifiConn,
                 "wifi_conn", getString(R.string.wifi_conn_log_file_head), "BasicWifiConnLogCreate");
 
     }
@@ -512,6 +587,7 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
         mLogFileGps = closeLogFile(LOG_GPS_FLAG, mLogFileGps, "closeGpsLog");
         mLogFileState = closeLogFile(LOG_STATE_FLAG, mLogFileState, "closeStateLog");
         mLogFileCell = closeLogFile(LOG_CELL_FLAG, mLogFileCell, "closeCellLog");
+        mLogFileCellVerbose = closeLogFile(LOG_CELL_FLAG, mLogFileCellVerbose, "closeCellVerboseLog");
         mLogFileWifiDisc = closeLogFile(LOG_WIFI_FLAG, mLogFileWifiDisc, "closeWifiDiscLog");
         mLogFileWifiConn = closeLogFile(LOG_WIFI_FLAG, mLogFileWifiConn, "closeWifiConnLog");
     }
@@ -576,13 +652,13 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
             NetworkInfo netInfo = conMan.getActiveNetworkInfo();
             if (netInfo != null && netInfo.getType() == ConnectivityManager.TYPE_WIFI) {
                 mWifiConnectedFlag = true;
-            } else{
+            } else {
                 mWifiConnectedFlag = false;
             }
 
             // Log all available Wifi info and schedule a new scan if not connected to any Wifi
             // access point.
-            if(!mWifiConnectedFlag) {
+            if (!mWifiConnectedFlag) {
                 LogFileWriteAllWifiInfo(LOG_WIFI_FLAG, mWifiConnectedFlag,
                         mLogFileWifiDisc, "BasicActWifiDiscWrite");
                 mWifiManager.startScan();
@@ -592,11 +668,12 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
 
     public void LogFileWriteAllWifiInfo(boolean logFlag, boolean logConnectedWifiSSID,
                                         LogFile logFile, String errorTag) {
-        long cur_time = System.currentTimeMillis();
-        long elapsed_time = android.os.SystemClock.elapsedRealtime();
 
         List<ScanResult> wifiScanList = mWifiManager.getScanResults();
         wifis = new String[wifiScanList.size()];
+
+        long cur_time = System.currentTimeMillis();
+        long elapsed_time = android.os.SystemClock.elapsedRealtime();
 
         for (int i = 0; i < wifiScanList.size(); i++) {
             wifis[i] = i + ", " + (wifiScanList.get(i)).SSID + ", "
@@ -610,14 +687,14 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
 
         String string;
 
-        if(logConnectedWifiSSID) {
+        if (logConnectedWifiSSID) {
             string = "------\n"
                     + formatterClock.format(cur_time) + ", " + cur_time + ", " + elapsed_time + "," + getCurrentSsid(this)
                     + "\n------\n";
             for (int i = 0; i < wifis.length; i++) {
                 string = string + wifis[i] + "\n";
             }
-        }else{
+        } else {
             string = "------\n"
                     + formatterClock.format(cur_time) + ", " + cur_time + ", " + elapsed_time
                     + "\n------\n";

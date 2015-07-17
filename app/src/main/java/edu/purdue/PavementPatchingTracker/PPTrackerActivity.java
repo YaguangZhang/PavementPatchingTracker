@@ -49,6 +49,12 @@ public class PPTrackerActivity extends WifiSpeedTestServerActivity {
     private boolean pptrackerIsSpreading = false;
     private boolean pptrackerDoneSpreading = false;
 
+    private static TextView mHiddenViewForCell;
+
+    public TextView getmHiddenViewForCell() {
+        return mHiddenViewForCell;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +75,12 @@ public class PPTrackerActivity extends WifiSpeedTestServerActivity {
         LogFileWrite(isLOG_STATE_FLAG(), getmLogFileState(),
                 "% PPTracker state: not spreading (default)\n",
                 "PPTrackerOnStartWrite");
+
+        if(isLOG_CELL_FLAG()) {
+            if (mHiddenViewForCell != null) {
+                mHiddenViewForCell.setText("Loading cell signal info...");
+            }
+        }
     }
 
     @Override
@@ -123,6 +135,7 @@ public class PPTrackerActivity extends WifiSpeedTestServerActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_pptracker,
                     container, false);
+            mHiddenViewForCell = (TextView) rootView.findViewById(R.id.hiddenTextViewForCell);
             return rootView;
         }
     }
@@ -341,6 +354,16 @@ public class PPTrackerActivity extends WifiSpeedTestServerActivity {
             } catch (IOException ioe) {
                 throw ioe;
             }
+        }
+    }
+
+    // Show the last logged cell info on the screen.
+
+    @Override
+    public void setStringLoggedToCell(String stringLoggedToCell) {
+        super.setStringLoggedToCell(stringLoggedToCell);
+        if(mHiddenViewForCell != null) {
+            mHiddenViewForCell.setText(getStringLoggedToCell());
         }
     }
 }

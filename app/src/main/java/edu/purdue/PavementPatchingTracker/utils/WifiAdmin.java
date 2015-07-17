@@ -5,7 +5,6 @@ import android.net.wifi.ScanResult;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.net.wifi.WifiManager.WifiLock;
 import android.util.Log;
 
 import java.lang.reflect.InvocationTargetException;
@@ -31,12 +30,11 @@ public class WifiAdmin {
     // 网络连接列表
     private List<WifiConfiguration> mWifiConfiguration;
     // 定义一个WifiLock
-    WifiLock mWifiLock;
+    WifiManager.WifiLock mWifiLock;
 
     public WifiManager getmWifiManager() {
         return mWifiManager;
     }
-
 
     // 构造器
     public WifiAdmin(Context context) {
@@ -167,6 +165,7 @@ public class WifiAdmin {
         mWifiManager.saveConfiguration();
         boolean c = mWifiManager.enableNetwork(wcgID, true);
         mWifiManager.reconnect();
+        // TODO: Lock to the Wifi access point specified!
         mWifiManager.saveConfiguration();
 
         System.out.println("a(wcgID)--" + wcgID);
