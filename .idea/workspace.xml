@@ -29,68 +29,78 @@
       <file leaf-file-name="PPTrackerActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/PPTrackerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+            <state vertical-scroll-proportion="-47.454544">
+              <caret line="271" column="75" selection-start-line="271" selection-start-column="72" selection-end-line="271" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicGpsLoggingActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BasicGpsLoggingActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/BasicGpsLoggingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2933333">
-              <caret line="358" column="44" selection-start-line="358" selection-start-column="44" selection-end-line="358" selection-end-column="44" />
+            <state vertical-scroll-proportion="-1.171875">
+              <caret line="41" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="625" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2392#2393#0" expanded="true" />
-                <element signature="e#2420#2421#0" expanded="true" />
-                <element signature="e#2457#2458#0" expanded="true" />
-                <element signature="e#2482#2483#0" expanded="true" />
-                <element signature="e#2515#2516#0" expanded="true" />
-                <element signature="e#2546#2547#0" expanded="true" />
-                <element signature="e#2581#2582#0" expanded="true" />
-                <element signature="e#2614#2615#0" expanded="true" />
-                <element signature="e#2649#2650#0" expanded="true" />
-                <element signature="e#2670#2671#0" expanded="true" />
-                <element signature="e#2707#2708#0" expanded="true" />
-                <element signature="e#2730#2731#0" expanded="true" />
-                <element signature="e#2768#2769#0" expanded="true" />
-                <element signature="e#2792#2793#0" expanded="true" />
-                <element signature="e#2828#2829#0" expanded="true" />
-                <element signature="e#2850#2851#0" expanded="true" />
-                <element signature="e#2898#2899#0" expanded="true" />
-                <element signature="e#2926#2927#0" expanded="true" />
-                <element signature="e#2971#2972#0" expanded="true" />
-                <element signature="e#2995#2996#0" expanded="true" />
-                <element signature="e#3691#3737#0" expanded="true" />
-                <element signature="e#3885#3918#0" expanded="true" />
-                <element signature="e#4397#4446#0" expanded="true" />
-                <element signature="e#4557#4612#0" expanded="true" />
-                <element signature="e#4947#4948#0" expanded="true" />
-                <element signature="e#4958#4990#0" expanded="true" />
-                <element signature="e#4993#4994#0" expanded="true" />
-                <element signature="e#5035#5036#0" expanded="true" />
-                <element signature="e#5046#5088#0" expanded="true" />
-                <element signature="e#5091#5092#0" expanded="true" />
-                <element signature="e#5126#5127#0" expanded="true" />
-                <element signature="e#5151#5152#0" expanded="true" />
-                <element signature="e#5203#5204#0" expanded="true" />
-                <element signature="e#5235#5236#0" expanded="true" />
-                <element signature="e#5759#6184#0" expanded="true" />
-                <element signature="e#5897#6086#0" expanded="true" />
-                <element signature="e#6085#6086#0" expanded="true" />
-                <element signature="e#6183#6184#0" expanded="true" />
-                <element signature="e#7593#7630#0" expanded="true" />
-                <element signature="e#8284#8323#0" expanded="true" />
-                <element signature="e#14318#14355#0" expanded="true" />
-                <element signature="e#14457#14502#0" expanded="true" />
-                <element signature="e#16076#16114#0" expanded="true" />
-                <element signature="e#17255#17295#0" expanded="true" />
-                <element signature="e#18002#18046#0" expanded="true" />
-                <element signature="e#18583#18627#0" expanded="true" />
-                <element signature="e#19717#19761#0" expanded="true" />
+                <element signature="e#2443#2444#0" expanded="true" />
+                <element signature="e#2471#2472#0" expanded="true" />
+                <element signature="e#2508#2509#0" expanded="true" />
+                <element signature="e#2533#2534#0" expanded="true" />
+                <element signature="e#2566#2567#0" expanded="true" />
+                <element signature="e#2597#2598#0" expanded="true" />
+                <element signature="e#2632#2633#0" expanded="true" />
+                <element signature="e#2665#2666#0" expanded="true" />
+                <element signature="e#2700#2701#0" expanded="true" />
+                <element signature="e#2721#2722#0" expanded="true" />
+                <element signature="e#2758#2759#0" expanded="true" />
+                <element signature="e#2781#2782#0" expanded="true" />
+                <element signature="e#2819#2820#0" expanded="true" />
+                <element signature="e#2843#2844#0" expanded="true" />
+                <element signature="e#2879#2880#0" expanded="true" />
+                <element signature="e#2901#2902#0" expanded="true" />
+                <element signature="e#2949#2950#0" expanded="true" />
+                <element signature="e#2977#2978#0" expanded="true" />
+                <element signature="e#3022#3023#0" expanded="true" />
+                <element signature="e#3046#3047#0" expanded="true" />
+                <element signature="e#3742#3788#0" expanded="true" />
+                <element signature="e#3936#3969#0" expanded="true" />
+                <element signature="e#4448#4497#0" expanded="true" />
+                <element signature="e#4608#4663#0" expanded="true" />
+                <element signature="e#4998#4999#0" expanded="true" />
+                <element signature="e#5009#5041#0" expanded="true" />
+                <element signature="e#5044#5045#0" expanded="true" />
+                <element signature="e#5086#5087#0" expanded="true" />
+                <element signature="e#5097#5139#0" expanded="true" />
+                <element signature="e#5142#5143#0" expanded="true" />
+                <element signature="e#5177#5178#0" expanded="true" />
+                <element signature="e#5202#5203#0" expanded="true" />
+                <element signature="e#5254#5255#0" expanded="true" />
+                <element signature="e#5286#5287#0" expanded="true" />
+                <element signature="e#5810#6235#0" expanded="true" />
+                <element signature="e#5948#6137#0" expanded="true" />
+                <element signature="e#6136#6137#0" expanded="true" />
+                <element signature="e#6234#6235#0" expanded="true" />
+                <element signature="e#7644#7681#0" expanded="true" />
+                <element signature="e#8335#8374#0" expanded="true" />
+                <element signature="e#14369#14406#0" expanded="true" />
+                <element signature="e#14508#14553#0" expanded="true" />
+                <element signature="e#16127#16165#0" expanded="true" />
+                <element signature="e#17306#17346#0" expanded="true" />
+                <element signature="e#18053#18097#0" expanded="true" />
+                <element signature="e#18634#18678#0" expanded="true" />
+                <element signature="e#19768#19812#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.008">
+              <caret line="32" column="36" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,8 +108,18 @@
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.090909">
-              <caret line="52" column="120" selection-start-line="52" selection-start-column="116" selection-end-line="52" selection-end-column="120" />
+            <state vertical-scroll-proportion="-1.802139">
+              <caret line="51" column="24" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainLoginActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/MainLoginActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -115,11 +135,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TruckActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TruckActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/TruckActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.4095164">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -129,7 +149,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+              <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -2201,14 +2221,15 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/BasicGpsLoggingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="951" />
-    <option name="y" value="684" />
-    <option name="width" value="2880" />
-    <option name="height" value="1546" />
+    <option name="x" value="2504" />
+    <option name="y" value="-3516" />
+    <option name="width" value="6432" />
+    <option name="height" value="3532" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -2252,6 +2273,46 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PavementPatchingTracker" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PavementPatchingTracker" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2269,6 +2330,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="PavementPatchingTracker" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PavementPatchingTracker" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2557,7 +2632,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="951" y="684" width="2880" height="1546" extended-state="0" />
+    <frame x="2504" y="-3516" width="6432" height="3532" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -2565,7 +2640,7 @@
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4785124" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18116395" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2579,7 +2654,7 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34024745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1484127" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2605,10 +2680,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/TruckActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/BasicGpsLoggingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.171875">
+          <caret line="41" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="625" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2443#2444#0" expanded="true" />
+            <element signature="e#2471#2472#0" expanded="true" />
+            <element signature="e#2508#2509#0" expanded="true" />
+            <element signature="e#2533#2534#0" expanded="true" />
+            <element signature="e#2566#2567#0" expanded="true" />
+            <element signature="e#2597#2598#0" expanded="true" />
+            <element signature="e#2632#2633#0" expanded="true" />
+            <element signature="e#2665#2666#0" expanded="true" />
+            <element signature="e#2700#2701#0" expanded="true" />
+            <element signature="e#2721#2722#0" expanded="true" />
+            <element signature="e#2758#2759#0" expanded="true" />
+            <element signature="e#2781#2782#0" expanded="true" />
+            <element signature="e#2819#2820#0" expanded="true" />
+            <element signature="e#2843#2844#0" expanded="true" />
+            <element signature="e#2879#2880#0" expanded="true" />
+            <element signature="e#2901#2902#0" expanded="true" />
+            <element signature="e#2949#2950#0" expanded="true" />
+            <element signature="e#2977#2978#0" expanded="true" />
+            <element signature="e#3022#3023#0" expanded="true" />
+            <element signature="e#3046#3047#0" expanded="true" />
+            <element signature="e#3742#3788#0" expanded="true" />
+            <element signature="e#3936#3969#0" expanded="true" />
+            <element signature="e#4448#4497#0" expanded="true" />
+            <element signature="e#4608#4663#0" expanded="true" />
+            <element signature="e#4998#4999#0" expanded="true" />
+            <element signature="e#5009#5041#0" expanded="true" />
+            <element signature="e#5044#5045#0" expanded="true" />
+            <element signature="e#5086#5087#0" expanded="true" />
+            <element signature="e#5097#5139#0" expanded="true" />
+            <element signature="e#5142#5143#0" expanded="true" />
+            <element signature="e#5177#5178#0" expanded="true" />
+            <element signature="e#5202#5203#0" expanded="true" />
+            <element signature="e#5254#5255#0" expanded="true" />
+            <element signature="e#5286#5287#0" expanded="true" />
+            <element signature="e#5810#6235#0" expanded="true" />
+            <element signature="e#5948#6137#0" expanded="true" />
+            <element signature="e#6136#6137#0" expanded="true" />
+            <element signature="e#6234#6235#0" expanded="true" />
+            <element signature="e#7644#7681#0" expanded="true" />
+            <element signature="e#8335#8374#0" expanded="true" />
+            <element signature="e#14369#14406#0" expanded="true" />
+            <element signature="e#14508#14553#0" expanded="true" />
+            <element signature="e#16127#16165#0" expanded="true" />
+            <element signature="e#17306#17346#0" expanded="true" />
+            <element signature="e#18053#18097#0" expanded="true" />
+            <element signature="e#18634#18678#0" expanded="true" />
+            <element signature="e#19768#19812#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.008">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.802139">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/MainLoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/PPTrackerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-47.454544">
+          <caret line="271" column="75" selection-start-line="271" selection-start-column="72" selection-end-line="271" selection-end-column="75" />
           <folding />
         </state>
       </provider>
@@ -2616,81 +2772,16 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/PPTrackerActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/TruckActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.4095164">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.090909">
-          <caret line="52" column="120" selection-start-line="52" selection-start-column="116" selection-end-line="52" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/purdue/PavementPatchingTracker/BasicGpsLoggingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2933333">
-          <caret line="358" column="44" selection-start-line="358" selection-start-column="44" selection-end-line="358" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2392#2393#0" expanded="true" />
-            <element signature="e#2420#2421#0" expanded="true" />
-            <element signature="e#2457#2458#0" expanded="true" />
-            <element signature="e#2482#2483#0" expanded="true" />
-            <element signature="e#2515#2516#0" expanded="true" />
-            <element signature="e#2546#2547#0" expanded="true" />
-            <element signature="e#2581#2582#0" expanded="true" />
-            <element signature="e#2614#2615#0" expanded="true" />
-            <element signature="e#2649#2650#0" expanded="true" />
-            <element signature="e#2670#2671#0" expanded="true" />
-            <element signature="e#2707#2708#0" expanded="true" />
-            <element signature="e#2730#2731#0" expanded="true" />
-            <element signature="e#2768#2769#0" expanded="true" />
-            <element signature="e#2792#2793#0" expanded="true" />
-            <element signature="e#2828#2829#0" expanded="true" />
-            <element signature="e#2850#2851#0" expanded="true" />
-            <element signature="e#2898#2899#0" expanded="true" />
-            <element signature="e#2926#2927#0" expanded="true" />
-            <element signature="e#2971#2972#0" expanded="true" />
-            <element signature="e#2995#2996#0" expanded="true" />
-            <element signature="e#3691#3737#0" expanded="true" />
-            <element signature="e#3885#3918#0" expanded="true" />
-            <element signature="e#4397#4446#0" expanded="true" />
-            <element signature="e#4557#4612#0" expanded="true" />
-            <element signature="e#4947#4948#0" expanded="true" />
-            <element signature="e#4958#4990#0" expanded="true" />
-            <element signature="e#4993#4994#0" expanded="true" />
-            <element signature="e#5035#5036#0" expanded="true" />
-            <element signature="e#5046#5088#0" expanded="true" />
-            <element signature="e#5091#5092#0" expanded="true" />
-            <element signature="e#5126#5127#0" expanded="true" />
-            <element signature="e#5151#5152#0" expanded="true" />
-            <element signature="e#5203#5204#0" expanded="true" />
-            <element signature="e#5235#5236#0" expanded="true" />
-            <element signature="e#5759#6184#0" expanded="true" />
-            <element signature="e#5897#6086#0" expanded="true" />
-            <element signature="e#6085#6086#0" expanded="true" />
-            <element signature="e#6183#6184#0" expanded="true" />
-            <element signature="e#7593#7630#0" expanded="true" />
-            <element signature="e#8284#8323#0" expanded="true" />
-            <element signature="e#14318#14355#0" expanded="true" />
-            <element signature="e#14457#14502#0" expanded="true" />
-            <element signature="e#16076#16114#0" expanded="true" />
-            <element signature="e#17255#17295#0" expanded="true" />
-            <element signature="e#18002#18046#0" expanded="true" />
-            <element signature="e#18583#18627#0" expanded="true" />
-            <element signature="e#19717#19761#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

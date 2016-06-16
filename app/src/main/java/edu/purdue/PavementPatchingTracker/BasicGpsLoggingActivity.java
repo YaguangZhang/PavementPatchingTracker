@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /*
- * The activity for GPS data recording only.
+ * The activity for GPS data recording (also extended to record cell and Wifi signal strength).
  * 
  * @author: Yaguang Zhang
  * Reference: Stephan Williams' LogAccelGpsActivity project.
