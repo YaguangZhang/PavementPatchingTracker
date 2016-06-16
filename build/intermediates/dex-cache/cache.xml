@@ -2,165 +2,361 @@
 <items version="2" >
 
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-d3635b8bdd4811c95c08e73d9fde41bc7cca8933.jar" />
+        sha1="d900f2a1ff098cac8befe6c023d723e9afb154be">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-9.0.2_048f73d9e066de8d14c5b3676ea6da2825b795b7\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-c111b0afae06146aab119463366107467c2dfd56.jar" />
+        sha1="a511c684ea4c2cf31a3377d51e7677cb76696e07">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-9.0.2_a558a0bee63d1ba350bfd54b246125e055824645\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-e2d9152048d771174ca15a2f9458de3b77bc27ec.jar" />
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.0.0_3a3cbe23e33ac28fc4feb05e40ec37b6e122ebb0\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-bf783ab1d7a6b73fca6e3cb2e57d1d4a18f4c515.jar" />
+        sha1="fe5b47e764869f1076cb9cfe12801ed2ef4e9117">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-9.0.2_0310081d958ca29f448c8d8caedceb92e44bfcee\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-342f7da53259c987500a399686ed58984ba5bd47.jar" />
+        sha1="39ed6a407831cdbc50c21c815eb2a1d1f0c26d2a">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_17f34567d47dadb2e07ae74ff7294e1b6144b172\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-52f0dadb1513f60becf8e7741121c754141fab04.jar" />
+        sha1="ad0b1a6ff1f226fdcda199c408b4dac085e4fe06">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_bd9c05754ce3add809e05c9c9e123ab9fc8416f6\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-b8c38d884436ab986d0ef4b7cbf6926b45490e27.jar" />
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_5b3f75ee6eac89c73602546d7968ba050b52af4f\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-c242adc68e9f95b818cb489ab1614ecdb8191279.jar" />
+        sha1="d9ea4cdaafa29ec4651d6e4715788d3fcaa7b913">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-9.0.2_294da8066e38836780ede49556fd8e5764438ce4\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics-impl\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-7ae7b60b711346458fc0469cb03bad6e8356a352.jar" />
+        sha1="6c58c14d15602fea2c50138c73bb107e8b832b62">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-impl-9.0.2_eae687eb7c45fcf9bb48960f9494bc45119c79a0\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-747330a9ac0cf3706800276dfc6e3ad542e51a4f.jar" />
+        sha1="53f10fcd322a3931495d6ca2078a81f4957cdbce">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-9.0.2_9a39e579957e55d109ba03e71c0bc33198e04b3f\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-20ae9fa60c8f9d62727e7c7cd570e78925cb7bbe.jar" />
+        sha1="829c6e46cb221c2102801221c648b77113743e81">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-9.0.2_be631dd0092f5f4406b6893c7c8f6115e5041a06\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-5f41dc135b0de22415873760b962a652e419d404.jar" />
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-23.0.0_3a60fb8cfa65e8298865a967cf960f510e46bb38\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-8220ee55247a0f1a35bfe0cf2c1818bcf07ad1ff.jar" />
+        sha1="bc156efaaee99f1ef6bf471347373a4cbb28e2a1">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-9.0.2_8cb4d8d45bf03881078a9a3bd4c8d745a7b99f46\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="055783146ba9654a725442563be78cad303aad1f">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-3290e1daf09b507e3f7eb8ac34cff45731671ecd.jar" />
+        sha1="f2774b1e02e5fbc524590311a744263c3b152d63">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-9.0.2_7d258cd7c06e925f64c637cd6b88d3e96a360783\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-config\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-a6e2066d1c643bb653f01dbdcdf53a33169c7945.jar" />
+        sha1="604ecf403feb0084dc6d0c12f1677a490cf45e4c">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-config-9.0.2_0988e80b52fc1d7c6250d941b3222c6f25c3eee8\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-0ca44923ad4b7c7d376568768da352252603b7bd.jar" />
+        sha1="4022261eeea0d92eb2997a68d2c1f084a16abad9">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.0.2_3a9647277fae65dcf7af765f2d4f99fbf49ea774\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-6e7f823183fee12aafa9b735af16297ab9219217.jar" />
+        sha1="2ab5be19bbd34bae74662ea6b2d4451314d92d97">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-9.0.2_42808fa26c3a1aa5d9c262d4810f6c4836d2ff83\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-ddcdbf0a11848a7e8fbc87d841ba15b683e46876.jar" />
+        sha1="9819419ce8d79f3f81a0fc70f9345ac8c843af9c">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-9.0.2_84b9b6d7b44924ea063f48fad5e0c47dd058132f\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-f7b84caf45c62162ed14ce28e6bf5952cd189485.jar" />
+        sha1="e6970f0554f9508c041f1f6960af15cc888c9f35">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-9.0.2_d7aa6b550de43be760065272239b659124aed076\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-fcb136d527a56eb8ae2a9b393609500e65e5d8ca.jar" />
+        sha1="4ec890171a97b5ab98292f131aa784e0f3792c73">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-9.0.2_95b75eec570d994921c0d5a1b7933815a0d628fa\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-a695bbdd6009487c2a0d8f8bcb44770298df0da4.jar" />
+        sha1="143813b18381b28de1e04aae1d92fcb374a0add9">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-9.0.2_21965ed857c4e3e2f4377e23a801ab1086c74d40\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.0.0/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-api\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/classes-b74c0347f5d33bc4cbf1da12a11a7c9027106c1e.jar" />
+        sha1="f399a2fde7888450cadcaec4974bfd169d8cce43">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-api-9.0.2_a42c6679f9fe4d618c7e256075f9c3c4819f1fa1\classes.dex" />
     </item>
     <item
-        jar="/Users/Zyglabs/Documents/Android Studio/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
-        jumboMode="false"
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.0.2\jars\classes.jar"
+        jumboMode="true"
         revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="/Users/Zyglabs/Dropbox/ZygLabsAndroid2015/MyApps/PavementPatchingTracker/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-51693df6a3e655362395a837052a4947a6b452aa.jar" />
+        sha1="aec1bc54964a85d851c2c1b1cb7f90f7dbd755ab">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.0.2_2bc29deab8ee59947659f434ed15452b1c96b5dd\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="764d32faf85bc6f7bd2cdcb3a70a482c1884fdd2">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-9.0.2_237946d1eb8d4a95f7cb798ad6e5fa47efb03b7b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="8c0fc9b1ea0bac0cb31d60c8b1bf2feb0518e3a9">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-9.0.2_84cb372c435c94f55e06abd50b3a442b034a9e0b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="b6af089f583d547bcffc0689b2e80bc7aaa54b15">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-9.0.2_73d12a3c369f67a1c3b20bbe84de51e718ea3430\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="94d9cedd04b124aed044ac71c451a292856d854c">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-9.0.2_7a4acb04e589991ed8caa08af9f6adda9a2e4e5a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="b3d0809a742c5f768c6aa9efc6decd5c1d6cd227">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-9.0.2_969be9b7cf987f1dd47f4329812e2c71c8698dac\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="51a11c41a08f099a204e1b8dcc04f27217de50ec">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-9.0.2_ea74c1f6143c551f3d12577acb13c7667af6b3f1\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="b8e0372ca6dc89ac4fe22b76eeea4f68ece435b8">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-lite-9.0.2_5aa3a91815cdf4c7240f39896cd53e866073db0f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.0.0_e67a85c5a872b16048e312411eaa66392a93b7c8\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-common\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="568d5bda0b4d51f90d978ace369bb9ad024d2057">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-common-9.0.2_95b1fd8f3bd026c3f576b5af44f6ef14fa82afdc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="6ff48ef26bc539c78af4aa061cb9bad6abcbf5e8">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-9.0.2_c6615754f0d653e0e7c7e2e699386833635936c6\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="e11da70cff6a544a45cdc21f419802d9bb9043ac">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-9.0.2_455f5d2ae0f03d91b4dc5d3a46aec72c7f7101f6\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="92a1d5f71b0fc8938f1d3f2e6ef984b52b894b4d">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-9.0.2_e4e5b6db19ab527d29cc8fb3917f3126241818b6\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="cf16220db9128d91a215aedc739584181d5ca6a4">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-iid-9.0.2_3875185c1866788cfb41003b0d4da43ae73cefbd\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="cd4c7c54e15d9ccbc448384fa2c4684d69ca73f0">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-9.0.2_9c7e4bec3765b5e358eb31a14244dbc17aeac95c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="060a7157438a0b1b0706b99c430fb3ecbc5a79a4">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-9.0.2_5df886913c49d15f298e0756112b09c597e55afc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-crash\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="922c24fbfc4247947fcfaf2b95f295a16a8c3d17">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-crash-9.0.2_93f91e993ddbc3c3e8695486022c7baeeec651c8\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-module\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="79e298d7fed2fcada58da7032d07d34ee198a545">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-module-9.0.2_e8f7a59b0ad77f50ec225056f274ab7cda7754b1\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="0c835e9f3875cf245877c9b17d1c69bc98f16057">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-9.0.2_53f9d5cb775b39749c08adb14ee8d2648cb9e807\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="f4fb6981392ca7680d02fd57d26d6124c141d9d9">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-9.0.2_2fc429bed816f42a5d3c8de5e48ed18b54078ece\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="a498fab72f8663c26fbf3d4496eb6b673b17bcae">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-9.0.2_63e659713be2aa46384f1f3f0e24f17503991ec2\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_f2f414959795944939ab18e4a47f7d03a7350ea7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="20e1a0f0de6276a5f36062b655f8b20f8cc00cc4">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-9.0.2_6bc79343d4a73790c28fad2154a308915d6594a8\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="7e52b440a26498c56b4f263e215223b5451c955e">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-9.0.2_627aa9a743b86e32d78e5c1c8d07b6ae5a89b4fb\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="fa472b7cbd3897bf6bed6068ac0b00e494987688">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-9.0.2_0a8e88281eb30a81b3684612007761a502127e3b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="c96952c162c9f6076f44c5939982cb35491442ea">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-9.0.2_6ca48fb5d69abba2de821522af8d10d9a4fa7552\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="a45bc1ed812137b21dddd1cedaa3712b308f0b3f">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-9.0.2_6f63c9762c28bb19a4caaa5cfceb4a4b366d60a7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="9919563cffd8e3732e944d3c437d4b9575a08448">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-9.0.2_521d3f1660ba14e83870c26d4df7895e513366e5\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="C:\Users\Zyglabs\Documents\GitHub\PavementPatchingTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.0.0_cef33848b1ef2b9eda0cddb145d60c39fafdb282\classes.dex" />
     </item>
 
 </items>

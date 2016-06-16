@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 23
     buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "edu.purdue.PavementPatchingTracker"
         minSdkVersion 17
-        targetSdkVersion 21
+        targetSdkVersion 23
     }
 
     buildTypes {
@@ -20,6 +20,6 @@ android {
 
 dependencies {
     compile 'com.android.support:support-v4:19.1.0'
-    compile 'com.google.android.gms:play-services:+'
+    compile 'com.google.android.gms:play-services:9.0.2'
     compile 'com.android.support:appcompat-v7:19.1.0'
 }
