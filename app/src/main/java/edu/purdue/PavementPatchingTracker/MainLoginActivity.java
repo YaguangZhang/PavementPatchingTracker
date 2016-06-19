@@ -6,6 +6,7 @@ package edu.purdue.PavementPatchingTracker;
  * @author: Yaguang Zhang
  */
 
+import android.*;
 import android.R.color;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,8 +14,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Gravity;
@@ -72,6 +75,12 @@ public class MainLoginActivity extends ActionBarActivity {
 		} else {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
+		}
+
+		if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+			Utils.toastStringTextAtCenterWithLargerSize(this, "Initializing...");
+			// Get the permission to store data / GPS / Cell, etc.
+			Utils.verifyPermissions(this);
 		}
 
 		// Check whether the GPS service is on.

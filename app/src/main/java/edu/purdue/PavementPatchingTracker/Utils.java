@@ -1,13 +1,16 @@
 package edu.purdue.PavementPatchingTracker;
 
+import android.*;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings.Secure;
+import android.support.v4.app.ActivityCompat;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -122,4 +125,38 @@ public class Utils {
         toast.show();
     }
 
+    /**
+     * Checks if the app has permission to write to device storage
+     *
+     * If the app does not has permission then the user will be prompted to grant permissions
+     *
+     * @param activity
+     */
+
+    private static String[] PERMISSIONS= {
+            // Storage Permissions
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            // Location Permissions
+            android.Manifest.permission.ACCESS_FINE_LOCATION,
+            // Others
+            android.Manifest.permission.INTERNET,
+            android.Manifest.permission.CAMERA,
+            android.Manifest.permission.ACCESS_NETWORK_STATE,
+            android.Manifest.permission.ACCESS_WIFI_STATE
+    };
+
+
+    public static void verifyPermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS,
+                    22
+            );
+        }
+    }
 }
