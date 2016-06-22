@@ -498,7 +498,7 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
 			}
 		}
 
-		// Create the log file for Wifi strength..
+		// Create the log file for Wifi strength.
 		if (LOG_WIFI_FLAG) {
 			if (logFileNameWifi == null) {
 				formatterUnderline = new SimpleDateFormat(
@@ -526,7 +526,7 @@ public class BasicGpsLoggingActivity extends ActionBarActivity implements
 			}
 		}
 
-		// Create the log file for cell signal strength..
+		// Create the log file for cell signal strength.
         if (LOG_SIGNAL_FLAG) {
             if (logFileNameSignal == null) {
                 formatterUnderline = new SimpleDateFormat(
